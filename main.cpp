@@ -11,8 +11,8 @@ using namespace std;
 fstream rom;
 fstream log;
 
-void randomize_little_cup();
-void dump_little_cup();
+void randomize_little_cup_rentals();
+void dump_little_cup_rentals();
 
 int main() {
 
@@ -30,8 +30,8 @@ int main() {
         return 2;
     }
 
-    randomize_little_cup();
-    dump_little_cup();
+    randomize_little_cup_rentals();
+    dump_little_cup_rentals();
     
     // close 
     rom.close();
@@ -40,7 +40,7 @@ int main() {
     return 0;
 }
 
-void randomize_little_cup() {
+void randomize_little_cup_rentals() {
 
     // seed the random number generator
     srand(time(NULL));
@@ -61,7 +61,7 @@ void randomize_little_cup() {
     }
 }
 
-void dump_little_cup() {
+void dump_little_cup_rentals() {
     // read and print level and species
     uint8_t level = 0;
     uint8_t species = 0;

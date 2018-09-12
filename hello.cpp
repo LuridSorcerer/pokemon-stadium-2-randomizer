@@ -21,8 +21,8 @@ using namespace std;
 fstream rom;
 fstream logfile;
 
-void randomize_little_cup();
-void dump_little_cup();
+void randomize_little_cup_rentals();
+void dump_little_cup_rentals();
 
 // create our app, based on wxApp
 class MyApp : public wxApp {
@@ -135,11 +135,11 @@ void MyFrame::OnHello(wxCommandEvent& event) {
 }
 
 void MyFrame::OnRandomize(wxCommandEvent& event) {
-    randomize_little_cup();
-    dump_little_cup();
+    randomize_little_cup_rentals();
+    dump_little_cup_rentals();
 }
 
-void randomize_little_cup() {
+void randomize_little_cup_rentals() {
 
     // seed the random number generator
     srand(time(NULL));
@@ -160,7 +160,7 @@ void randomize_little_cup() {
     }
 }
 
-void dump_little_cup() {
+void dump_little_cup_rentals() {
     // read and print level and species
     uint8_t level = 0;
     uint8_t species = 0;
