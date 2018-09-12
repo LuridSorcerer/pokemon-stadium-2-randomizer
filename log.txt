@@ -1,0 +1,174 @@
+LITTLE CUP RENTALS
+------------------
+Level 5 1:Bulbasaur
+	Feint Attack  / Frustration  / Safeguard  / Peck 
+Level 5 4:Charmander
+	Slash  / Bind  / Attract  / Thunder 
+Level 5 7:Squirtle
+	Rolling Kick  / Dragon Rage  / Morning Sun  / Fury Cutter 
+Level 5 0:MissingNo.
+	False Swipe  / Splash  / Barrage  / Mind Reader 
+Level 5 0:MissingNo.
+	Cross Chop  / Cotton Spore  / Rain Dance  / Rollout 
+Level 5 16:Pidgey
+	Sky Attack  / Fire Spin  / Hypnosis  / Attract 
+Level 5 19:Rattata
+	Acid Armor  / Sweet Kiss  / Psybeam  / Fissure 
+Level 5 21:Spearow
+	Double-Edge  / Sacred Fire  / Snore  / Magnitude 
+Level 5 23:Ekans
+	Pound  / Barrage  / Quick Attack  / Slash 
+Level 5 27:Sandshrew
+	Dynamic Punch  / Blizzard  / Aurora Beam  / Aurora Beam 
+Level 5 29:Nidoran♀
+	Barrage  / Bite  / Slam  / Sharpen 
+Level 5 0:MissingNo.
+	Pay Day  / Megahorn  / Leech Life  / Hydro Pump 
+Level 5 37:Vulpix
+	Splash  / Skull Bash  / Recover  / -
+Level 5 41:Zubat
+	Mega Kick  / Triple Kick  / Low Kick  / Flail 
+Level 5 43:Oddish
+	Night Shade  / Octazooka  / Stun Spore  / Dream Eater 
+Level 5 46:Paras
+	Conversion  / Hyper Beam  / Flame Wheel  / Conversion 
+Level 5 48:Venonat
+	Cut  / Whirlwind  / Soft-Boiled  / Disable 
+Level 5 50:Diglett
+	Leech Life  / Defense Curl  / Headbutt  / -
+Level 5 52:Meowth
+	Ember  / Perish Song  / Beat Up  / Lick 
+Level 5 54:Psyduck
+	Triple Kick  / Leech Life  / Aeroblast  / Skull Bash 
+Level 5 56:Mankey
+	Fly  / Whirlpool  / Morning Sun  / Leer 
+Level 5 58:Growlithe
+	Struggle  / Light Screen  / Fury Attack  / Cut 
+Level 5 60:Poliwag
+	Ember  / Flame Wheel  / Return  / Steel Wing 
+Level 5 63:Abra
+	Morning Sun  / Glare  / Mach Punch  / Bubble Beam 
+Level 5 66:Machop
+	Frustration  / Submission  / Withdraw  / Nightmare 
+Level 5 69:Bellsprout
+	Growth  / Pain Split  / Mud-Slap  / -
+Level 5 72:Tentacool
+	Pursuit  / Blizzard  / Sky Attack  / -
+Level 5 74:Geodude
+	Crabhammer  / Sonic Boom  / Thunderbolt  / Morning Sun 
+Level 5 77:Ponyta
+	Sing  / Constrict  / Fissure  / Steel Wing 
+Level 5 79:Slowpoke
+	Psych Up  / Scary Face  / Double-Edge  / Bite 
+Level 5 81:Magnemite
+	Double Team  / Double Slap  / Low Kick  / Splash 
+Level 5 84:Doduo
+	Endure  / Rock Smash  / Fury Cutter  / Vital Throw 
+Level 5 86:Seel
+	Waterfall  / Constrict  / Explosion  / -
+Level 5 88:Grimer
+	Teleport  / Struggle  / Giga Drain  / Barrage 
+Level 5 90:Shellder
+	Rain Dance  / Leech Seed  / Leech Life  / -
+Level 5 92:Gastly
+	Egg Bomb  / Spite  / Belly Drum  / Iron Tail 
+Level 5 95:Onix
+	Psybeam  / Mega Kick  / Spikes  / Bide 
+Level 5 96:Drowzee
+	Slam  / Twineedle  / Conversion  / Sludge 
+Level 5 98:Krabby
+	Minimize  / Poison Sting  / Thunder Wave  / Lick 
+Level 5 100:Voltorb
+	Thrash  / Smokescreen  / Double Team  / Pursuit 
+Level 5 102:Exeggcute
+	Twister  / Seismic Toss  / Rain Dance  / Crabhammer 
+Level 5 104:Cubone
+	Roar  / Octazooka  / Poison Sting  / Body Slam 
+Level 5 109:Koffing
+	Solar Beam  / Soft-Boiled  / Cross Chop  / Icy Wind 
+Level 5 111:Rhyhorn
+	Peck  / Curse  / Rain Dance  / Belly Drum 
+Level 5 113:Chansey
+	Mirror Coat  / Ember  / - / Clamp 
+Level 5 116:Horsea
+	Mega Kick  / Bonemerang  / Poison Gas  / -
+Level 5 118:Goldeen
+	Peck  / Mist  / Leech Seed  / Substitute 
+Level 5 120:Staryu
+	Dragon Breath  / Conversion 2  / Barrage  / Attract 
+Level 5 123:Scyther
+	Surf  / Swift  / Aeroblast  / Mimic 
+Level 5 129:Magikarp
+	Spike Cannon  / Return  / Outrage  / False Swipe 
+Level 5 133:Eevee
+	Substitute  / Sweet Kiss  / Heal Bell  / Poison Sting 
+Level 5 137:Porygon
+	Smokescreen  / Gust  / Baton Pass  / Mach Punch 
+Level 5 138:Omanyte
+	Fire Punch  / Dig  / Sleep Talk  / Double-Edge 
+Level 5 140:Kabuto
+	Reversal  / Powder Snow  / Rain Dance  / Water Gun 
+Level 5 147:Dratini
+	Morning Sun  / Aurora Beam  / Frustration  / Milk Drink 
+Level 5 152:Chikorita
+	Disable  / Nightmare  / Vital Throw  / Nightmare 
+Level 5 155:Cyndaquil
+	Barrier  / Hyper Fang  / Thunderbolt  / Crunch 
+Level 5 158:Totodile
+	Sweet Kiss  / Tackle  / Quick Attack  / -
+Level 5 161:Sentret
+	Safeguard  / Thrash  / Glare  / Poison Gas 
+Level 5 163:Hoothoot
+	Ember  / Barrier  / Strength  / Lick 
+Level 5 165:Ledyba
+	Cut  / Meditate  / Dynamic Punch  / Pay Day 
+Level 5 167:Spinarak
+	Jump Kick  / Mean Look  / Psybeam  / Ice Punch 
+Level 5 170:Chinchou
+	Thunder Wave  / Fissure  / Sand Attack  / Lock-On 
+Level 5 172:Pichu
+	Leech Seed  / Metronome  / Scary Face  / -
+Level 5 173:Cleffa
+	Sweet Scent  / Endure  / Twister  / Struggle 
+Level 5 174:Igglybuff
+	Synthesis  / Future Sight  / Cut  / -
+Level 5 175:Togepi
+	Agility  / Mean Look  / Frustration  / Mean Look 
+Level 5 177:Natu
+	Mega Drain  / Teleport  / Dragon Rage  / Splash 
+Level 5 179:Mareep
+	Icy Wind  / Flamethrower  / Bonemerang  / Body Slam 
+Level 5 183:Marill
+	Poison Powder  / Rolling Kick  / Recover  / Baton Pass 
+Level 5 187:Hoppip
+	Focus Energy  / Amnesia  / Curse  / Mud-Slap 
+Level 5 191:Sunkern
+	Rollout  / Poison Sting  / Egg Bomb  / Future Sight 
+Level 5 194:Wooper
+	Water Gun  / Smokescreen  / Dragon Breath  / Screech 
+Level 5 204:Pineco
+	Thief  / Supersonic  / Bide  / Poison Powder 
+Level 5 209:Snubbull
+	Ice Punch  / Spore  / Thrash  / Sky Attack 
+Level 5 216:Teddiursa
+	Psybeam  / Protect  / Twineedle  / Counter 
+Level 5 218:Slugma
+	Synthesis  / Ice Punch  / Night Shade  / Sludge 
+Level 5 220:Swinub
+	Body Slam  / Rollout  / Rage  / Splash 
+Level 5 223:Remoraid
+	Splash  / Slam  / Acid Armor  / Double Team 
+Level 5 228:Houndour
+	Sludge  / Bind  / Substitute  / Reversal 
+Level 5 231:Phanpy
+	Clamp  / Glare  / Horn Attack  / Smokescreen 
+Level 5 236:Tyrogue
+	Scary Face  / Fury Cutter  / Feint Attack  / Zap Cannon 
+Level 5 238:Smoochum
+	Mind Reader  / Sacred Fire  / Fire Spin  / Pin Missile 
+Level 5 239:Elekid
+	Crabhammer  / Sludge Bomb  / Confuse Ray  / Lock-On 
+Level 5 240:Magby
+	Perish Song  / Spark  / Soft-Boiled  / Rapid Spin 
+Level 5 246:Larvitar
+	Baton Pass  / Vital Throw  / Spikes  / Bone Club 
