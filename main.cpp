@@ -56,7 +56,7 @@ void randomize_little_cup_rentals() {
             // randomly pick a move and insert it
             uint8_t move = (rand() % MOVES_COUNT) + 1;
             //rom << move;
-            rom.write(&move,sizeof(move));
+            rom.write((char*)&move,sizeof(move));
         }
 
     }
@@ -80,8 +80,8 @@ void dump_little_cup_rentals() {
         // read level and species
         //rom >> level;
         //rom >> species;
-        rom.read(&level,sizeof(level));
-        rom.read(&species,sizeof(species));
+        rom.read((char*)&level,sizeof(level));
+        rom.read((char*)&species,sizeof(species));
 
         // write level and name
         logfile << "Level " << (int)level << " " 
@@ -93,7 +93,7 @@ void dump_little_cup_rentals() {
         for (int j = 0; j < 4; j++) {
             uint8_t move = 0;
             //rom >> move;
-            rom.read(&move,sizeof(move));
+            rom.read((char*)&move,sizeof(move));
             logfile << Moves[move];
             if (j < 3) { logfile << " / "; }
         }
