@@ -154,7 +154,8 @@ void randomize_little_cup_rentals() {
 
             // randomly pick a move and insert it
             uint8_t move = (rand() % MOVES_COUNT) + 1;
-            rom << move;
+            //rom << move;
+            rom.write(&move,sizeof(move));
         }
 
     }
@@ -174,8 +175,12 @@ void dump_little_cup_rentals() {
 
         // seek to pokemon
         rom.seekg(LITTLE_CUP_RENTALS + (SIZE_OF_POKEMON * i));
-        rom >> level;
-        rom >> species;
+
+        // read level and species
+        //rom >> level;
+        //rom >> species;
+        rom.read(&level,sizeof(level));
+        rom.read(&species,sizeof(species));
 
         // write level and name
         logfile << "Level " << (int)level << " " 
@@ -186,7 +191,8 @@ void dump_little_cup_rentals() {
         logfile << "\t";
         for (int j = 0; j < 4; j++) {
             uint8_t move = 0;
-            rom >> move;
+            //rom >> move;
+            rom.read(&move,sizeof(move));
             logfile << Moves[move];
             if (j < 3) { logfile << " / "; }
         }
