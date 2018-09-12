@@ -30,6 +30,9 @@ private:
     wxDECLARE_EVENT_TABLE();
 };
 
+// Create an enum of events that may be handled.
+// These will correspond to menu items.
+// Many built-in events do not need to be defined manually (ex. Exit, Help)
 enum {
     ID_Hello = 1
 };
@@ -47,6 +50,7 @@ wxIMPLEMENT_APP(MyApp);
 // this is the app's OnInit function, which will be used as the
 // "main" function (see previous statement)
 bool MyApp::OnInit() {
+    // create a window frame and display it
     MyFrame *frame = new MyFrame("Test Program",wxPoint(50,50),wxSize(640,480) );
     frame->Show(true);
     return true;
@@ -56,21 +60,26 @@ bool MyApp::OnInit() {
 MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size) 
     : wxFrame(NULL,wxID_ANY,title,pos,size) {
     
+    // create file menu
     wxMenu *menuFile = new wxMenu;
     menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
         "Help string show in status bar for this menu item");
     menuFile->AppendSeparator();
     menuFile->Append(wxID_EXIT);
 
+    // create help menu
     wxMenu *menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT);
 
+    // create menu bar and add our menu items we just created
     wxMenuBar *menuBar = new wxMenuBar;
     menuBar->Append(menuFile,"&File");
     menuBar->Append(menuHelp,"&Help");
 
+    // show menu bar we just created
     SetMenuBar(menuBar);
 
+    // create a status bar and add default message to it
     CreateStatusBar();
     SetStatusText("Welcome to wxWidgets");
 }
