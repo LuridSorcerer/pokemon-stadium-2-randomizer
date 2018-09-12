@@ -1,3 +1,7 @@
+// wxWidgets hello test program
+// build with:
+// g++ hello.cpp `wx-config --cxxflags` `wx-config --libs`
+
 #include <iostream>
 #include <fstream>
 #include <time.h>
@@ -5,6 +9,12 @@
 #include "PokemonNames.hpp"
 #include "Moves.hpp"
 #include "Constants.hpp" 
+
+// use precompiled headers if available
+#include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
 
 using namespace std;
 
@@ -14,7 +24,54 @@ fstream logfile;
 void randomize_little_cup_rentals();
 void dump_little_cup_rentals();
 
-int main() {
+// create our app, based on wxApp
+class MyApp : public wxApp {
+public:
+    virtual bool OnInit();
+};
+
+// create a main window by derriving from wxFrame.
+class MyFrame : public wxFrame {
+
+public:
+    MyFrame (const wxString& title, const wxPoint& pos, const wxSize& size);
+
+private:
+    // handle menu command events
+    void OnHello(wxCommandEvent& event);
+    void OnRandomize(wxCommandEvent& event);
+    void OnExit(wxCommandEvent& event);
+    void OnAbout(wxCommandEvent& event);
+
+    // create an event table so we can receive mouse and keyboard events
+    wxDECLARE_EVENT_TABLE();
+};
+
+// Create an enum of events that may be handled.
+// These will correspond to menu items.
+// Many built-in events do not need to be defined manually (ex. Exit, Help)
+enum {
+    ID_Hello = 1,
+    ID_Randomize
+};
+
+// create event table
+wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
+    EVT_MENU(ID_Hello, MyFrame::OnHello)
+    EVT_MENU(ID_Randomize, MyFrame::OnRandomize)
+    EVT_MENU(wxID_EXIT, MyFrame::OnExit)
+    EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
+wxEND_EVENT_TABLE()
+
+// define which app will serve as the "main" function
+wxIMPLEMENT_APP(MyApp);
+
+// this is the app's OnInit function, which will be used as the
+// "main" function (see previous statement)
+bool MyApp::OnInit() {
+    // create a window frame and display it
+    MyFrame *frame = new MyFrame("Test Program",wxPoint(50,50),wxSize(640,480) );
+    frame->Show(true);
 
     // open the ROM
     rom.open("rom.z64", ios::in | ios::out | ios::binary);
@@ -30,14 +87,56 @@ int main() {
         return 2;
     }
 
-    randomize_little_cup_rentals();
-    dump_little_cup_rentals();
+    return true;
+}
+
+// in the frame constructor, we'll create a menu bar and stuff
+MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size) 
+    : wxFrame(NULL,wxID_ANY,title,pos,size) {
     
+    // create file menu
+    wxMenu *menuFile = new wxMenu;
+    menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
+        "Help string show in status bar for this menu item");
+    menuFile->Append(ID_Randomize,"&Randomize","Randomize the ROM");
+    menuFile->AppendSeparator();
+    menuFile->Append(wxID_EXIT);
+
+    // create help menu
+    wxMenu *menuHelp = new wxMenu;
+    menuHelp->Append(wxID_ABOUT);
+
+    // create menu bar and add our menu items we just created
+    wxMenuBar *menuBar = new wxMenuBar;
+    menuBar->Append(menuFile,"&File");
+    menuBar->Append(menuHelp,"&Help");
+
+    // show menu bar we just created
+    SetMenuBar(menuBar);
+
+    // create a status bar and add default message to it
+    CreateStatusBar();
+    SetStatusText("Welcome to wxWidgets");
+}
+
+void MyFrame::OnExit(wxCommandEvent& event) {
     // close 
     rom.close();
+    Close(true);
+}
 
-    // exit
-    return 0;
+void MyFrame::OnAbout(wxCommandEvent& event) {
+    wxMessageBox("I have no idea what I'm doing.","HELP ME",
+    wxOK | wxICON_INFORMATION);
+}
+
+void MyFrame::OnHello(wxCommandEvent& event) {
+    wxLogMessage("Hello");
+}
+
+void MyFrame::OnRandomize(wxCommandEvent& event) {
+    randomize_little_cup_rentals();
+    dump_little_cup_rentals();
 }
 
 void randomize_little_cup_rentals() {
