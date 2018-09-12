@@ -9,7 +9,7 @@
 using namespace std;
 
 fstream rom;
-fstream log;
+fstream logfile;
 
 void randomize_little_cup_rentals();
 void dump_little_cup_rentals();
@@ -24,8 +24,8 @@ int main() {
     }
 
     // open log file
-    log.open("log.txt", ios::out);
-    if (!log.is_open()) {
+    logfile.open("log.txt", ios::out);
+    if (!logfile.is_open()) {
         cout << "Failed to open log file" << endl;
         return 2;
     }
@@ -55,7 +55,8 @@ void randomize_little_cup_rentals() {
 
             // randomly pick a move and insert it
             uint8_t move = (rand() % MOVES_COUNT) + 1;
-            rom << move;
+            //rom << move;
+            rom.write(&move,sizeof(move));
         }
 
     }
@@ -66,7 +67,7 @@ void dump_little_cup_rentals() {
     uint8_t level = 0;
     uint8_t species = 0;
 
-    log << "LITTLE CUP RENTALS" << endl
+    logfile << "LITTLE CUP RENTALS" << endl
         << "------------------" << endl;
 
     // go to first LittleCup Pokemon
@@ -75,22 +76,27 @@ void dump_little_cup_rentals() {
 
         // seek to pokemon
         rom.seekg(LITTLE_CUP_RENTALS + (SIZE_OF_POKEMON * i));
-        rom >> level;
-        rom >> species;
+
+        // read level and species
+        //rom >> level;
+        //rom >> species;
+        rom.read(&level,sizeof(level));
+        rom.read(&species,sizeof(species));
 
         // write level and name
-        log << "Level " << (int)level << " " 
+        logfile << "Level " << (int)level << " " 
             << (int)species << ":" << PokemonNames[species] <<  endl;
         
         // write out moveset
         rom.seekg(LITTLE_CUP_RENTALS + (SIZE_OF_POKEMON * i) + MOVE1);
-        log << "\t";
+        logfile << "\t";
         for (int j = 0; j < 4; j++) {
             uint8_t move = 0;
-            rom >> move;
-            log << Moves[move];
-            if (j < 3) { log << " / "; }
+            //rom >> move;
+            rom.read(&move,sizeof(move));
+            logfile << Moves[move];
+            if (j < 3) { logfile << " / "; }
         }
-        log << endl;
+        logfile << endl;
     }
 }
