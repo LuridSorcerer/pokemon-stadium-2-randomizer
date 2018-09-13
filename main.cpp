@@ -54,13 +54,15 @@ private:
 // Many built-in events do not need to be defined manually (ex. Exit, Help)
 enum {
     ID_Hello = 1,
-    ID_Randomize
+    ID_Randomize,
+    ID_Button
 };
 
 // create event table
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_MENU(ID_Hello, MyFrame::OnHello)
     EVT_MENU(ID_Randomize, MyFrame::OnRandomize)
+    EVT_BUTTON(ID_Button,MyFrame::OnExit)
     EVT_MENU(wxID_EXIT, MyFrame::OnExit)
     EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
 wxEND_EVENT_TABLE()
@@ -119,6 +121,11 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     // create a status bar and add default message to it
     CreateStatusBar();
     SetStatusText("Welcome to wxWidgets");
+
+    // Let's try to add a couple of buttons
+    wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
+    sizer->Add(new wxButton(this,ID_Button,"A Button"),0,0,0);
+    SetSizer(sizer);
 }
 
 void MyFrame::OnExit(wxCommandEvent& event) {
