@@ -4,3 +4,5 @@ a.out
 ps2rand
 log.txt
 .vscode
+**.exe
+**.dll
