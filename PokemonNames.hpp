@@ -1,6 +1,9 @@
+#ifndef POKEMONNAMES_HPP
+#define POKEMONNAMES_HPP
+
 #include <string.h>
 
-std::string PokemonNames[] = {
+const std::string PokemonNames[] = {
     "MissingNo.",
     "Bulbasaur",
     "Ivysaur",
@@ -254,3 +257,5 @@ std::string PokemonNames[] = {
     "Ho-Oh",
     "Celebi"
 };
+
+#endif

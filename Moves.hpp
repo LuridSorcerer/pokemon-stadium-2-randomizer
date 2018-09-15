@@ -1,6 +1,9 @@
+#ifndef MOVES_HPP
+#define MOVES_HPP
+
 #include <string.h>
 
-std::string Moves[] = {
+const std::string Moves[] = {
     "-",
     "Pound ",
     "Karate Chop ",
@@ -254,3 +257,5 @@ std::string Moves[] = {
     "Whirlpool ",
     "Beat Up "
 };
+
+#endif
