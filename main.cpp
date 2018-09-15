@@ -65,20 +65,9 @@ bool MyApp::OnInit() {
     MyFrame *frame = new MyFrame("Pokemon Stadium 2 Randomizer",wxPoint(50,50),wxSize(640,480) );
     frame->Show(true);
 
-    // open the ROM
-    // rom.open("rom.z64", ios::in | ios::out | ios::binary);
-    // if (!rom.is_open()) {
-    //     cout << "Failed to open ROM" << endl;
-    //     return 1;
-    // }
+    // Create randomizer
+    // This object handles opening, randomizing, and logging
     randomizer = new Randomizer("rom.z64");
-
-    // open log file
-    // logfile.open("log.txt", ios::out);
-    // if (!logfile.is_open()) {
-    //     cout << "Failed to open log file" << endl;
-    //     return 2;
-    // }
 
     return true;
 }
