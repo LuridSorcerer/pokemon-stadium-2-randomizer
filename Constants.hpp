@@ -2,6 +2,8 @@
 #define CONSTANTS_HPP
 
 #include "LittleCup.hpp"
+#include "PokeCup.hpp"
+#include "PrimeCup.hpp"
 
 #define SIZE_OF_POKEMON 24
 #define MOVES_COUNT 251
