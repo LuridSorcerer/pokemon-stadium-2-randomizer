@@ -1,6 +1,6 @@
 CC = g++
-SOURCE = main.cpp
-OBJ = main.o
+SOURCE = Randomizer.cpp main.cpp
+OBJ = Randomizer.o main.o
 EXE = ps2rand
 CXXFLAGS = `wx-config --cxxflags`
 LIBS = `wx-config --libs`
