@@ -8,6 +8,9 @@ EXE = ps2rand.exe
 CXXFLAGS = -pipe -mthreads -D__GNUWIN32__ -D__WXMSW__ -DWXUSINGDLL -DwxUSE_UNICODE -Wall -g -IC:\wxWidgets-3.0.4\include -IC:\wxWidgets-3.0.4\lib\gcc_dll\mswu
 LIBS = -LC:\wxWidgets-3.0.4\lib\gcc_dll  -mthreads  -lwxmsw30u -mwindows
 
+EMU = C:\Emulation\BizHawk-2.2.1\EmuHawk.exe
+ROM = rom.z64
+
 all: $(OBJ)
 	$(CC) -o $(EXE) $(OBJ) $(LIBS)
 %.o: %.cpp 
@@ -15,3 +18,6 @@ all: $(OBJ)
 
 clean:
 	del $(OBJ) $(EXE)
+
+run:
+	$(EMU) $(ROM)
