@@ -11,6 +11,7 @@
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif
+#include <wx/filepicker.h>
 
 Randomizer *randomizer;
 
@@ -33,6 +34,8 @@ private:
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
 
+    wxFilePickerCtrl *filepicker;
+
     // create an event table so we can receive mouse and keyboard events
     wxDECLARE_EVENT_TABLE();
 };
@@ -43,7 +46,8 @@ private:
 enum {
     ID_Hello = 1,
     ID_Randomize,
-    ID_Button
+    ID_Button,
+    ID_FilePickerCtrl
 };
 
 // create event table
@@ -67,7 +71,7 @@ bool MyApp::OnInit() {
 
     // Create randomizer
     // This object handles opening, randomizing, and logging
-    randomizer = new Randomizer("rom.z64");
+    // randomizer = new Randomizer("rom.z64");
 
     // seed random number generator
     srand(time(NULL));
@@ -101,11 +105,13 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 
     // create a status bar and add default message to it
     CreateStatusBar();
-    // SetStatusText("Welcome to wxWidgets");
+    SetStatusText("http://luridsorcerer.com");
 
     // Let's try to add a couple of buttons
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
-    sizer->Add(new wxButton(this,ID_Button,"Randomize"),0,0,0);
+    filepicker = new wxFilePickerCtrl(this,ID_FilePickerCtrl);
+    sizer->Add(filepicker, 0,wxEXPAND,0);
+    sizer->Add(new wxButton(this,ID_Button,"Randomize"),1,wxEXPAND | wxALL, 10);
     SetSizer(sizer);
 }
 
@@ -125,6 +131,10 @@ void MyFrame::OnHello(wxCommandEvent& event) {
 }
 
 void MyFrame::OnRandomize(wxCommandEvent& event) {
+
+    // create Randomizer
+    wxString path = filepicker->GetPath();
+    randomizer = new Randomizer( path.ToStdString() );
 
     // randomize Little Cup rentals 
     randomizer->randomize_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
