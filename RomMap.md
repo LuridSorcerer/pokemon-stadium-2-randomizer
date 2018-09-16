@@ -26,7 +26,7 @@ This section is not explained and therefore unhelpful.
 ## Rental Pokémon
 
 Rental Pokémon structure is as follow :
-* uu vv 00 00 ww ww ww ww 00 xx yy yy yy yy yy yy yy yy yy yy zz zz
+* uu vv 00 00 ww ww ww ww 00 xx yy yy yy yy yy yy yy yy yy yy zz zz __00 00__
 * uu : Level
 * vv : Specie id
 * ww : Moveset
@@ -34,11 +34,13 @@ Rental Pokémon structure is as follow :
 * yy : Stat exp
 * zz : IVs
 
-* 0x1708494-0x1708C00 : Little Cup Rental Pokémon
-* 0x1708CB4-0x170B1D0 : Prime Cup / Free Battle Rental Pokémon
-* ~~0x170BBA4-0x170D220~~ 0x170BB24-: Poké Cup / Gym Leader Castle Rental Pokémon
+* 0x1708494 - ~~0x1708C00~~ 0x1708CA4 : Little Cup Rental Pokémon
+* 0x1708CB4 - ~~0x170B1D0~~ 0x170A3C4 : Prime Cup / Free Battle Rental Pokémon
+* ~~0x170BBA4-0x170D220~~ 0x170BB24 - 0x170D234: Poké Cup / Gym Leader Castle Rental Pokémon
 
-Why is this 22 bytes long, but the actual data in the ROM appears to be 24 bytes each?
+~~Why is this 22 bytes long, but the actual data in the ROM appears to be 24 bytes each?~~
+
+Yeah, it's 24 bytes. And that first 00 appears to be related to held items. More research required.
 
 ## Pokémon Base Stats
 

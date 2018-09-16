@@ -122,9 +122,17 @@ void MyFrame::OnHello(wxCommandEvent& event) {
 }
 
 void MyFrame::OnRandomize(wxCommandEvent& event) {
+
+    // randomize Little Cup rentals 
     randomizer->randomize_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
     randomizer->dump_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
+
+    // randomize Poke Cup rentals
     randomizer->randomize_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
     randomizer->dump_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
+
+    // randomize Prime Cup rentals
+    randomizer->randomize_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
+    randomizer->dump_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
 }
 
