@@ -29,7 +29,6 @@ public:
 
 private:
     // handle menu command events
-    void OnHello(wxCommandEvent& event);
     void OnRandomize(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
@@ -44,15 +43,13 @@ private:
 // These will correspond to menu items and buttons.
 // Many built-in events do not need to be defined manually (ex. Exit, Help)
 enum {
-    ID_Hello = 1,
-    ID_Randomize,
+    ID_Randomize = 1,
     ID_Button,
     ID_FilePickerCtrl
 };
 
 // create event table
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
-    EVT_MENU(ID_Hello, MyFrame::OnHello)
     EVT_MENU(ID_Randomize, MyFrame::OnRandomize)
     EVT_BUTTON(ID_Button,MyFrame::OnRandomize)
     EVT_MENU(wxID_EXIT, MyFrame::OnExit)
@@ -69,10 +66,6 @@ bool MyApp::OnInit() {
     MyFrame *frame = new MyFrame("Pokemon Stadium 2 Randomizer",wxPoint(50,50),wxSize(640,480) );
     frame->Show(true);
 
-    // Create randomizer
-    // This object handles opening, randomizing, and logging
-    // randomizer = new Randomizer("rom.z64");
-
     // seed random number generator
     srand(time(NULL));
 
@@ -85,10 +78,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     
     // create file menu
     wxMenu *menuFile = new wxMenu;
-    // menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
-    //     "Help string show in status bar for this menu item");
-    // menuFile->Append(ID_Randomize,"&Randomize","Randomize the ROM");
-    // menuFile->AppendSeparator();
     menuFile->Append(wxID_EXIT);
 
     // create help menu
@@ -117,17 +106,12 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 
 void MyFrame::OnExit(wxCommandEvent& event) {
     // close 
-    //rom.close();
     Close(true);
 }
 
 void MyFrame::OnAbout(wxCommandEvent& event) {
     wxMessageBox("Created by LuridSorcerer \nluridsorcerer.com","About",
     wxOK | wxICON_INFORMATION);
-}
-
-void MyFrame::OnHello(wxCommandEvent& event) {
-    // wxLogMessage("Hello");
 }
 
 void MyFrame::OnRandomize(wxCommandEvent& event) {
