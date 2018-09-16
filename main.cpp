@@ -50,7 +50,6 @@ enum {
 
 // create event table
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
-    EVT_MENU(ID_Randomize, MyFrame::OnRandomize)
     EVT_BUTTON(ID_Button,MyFrame::OnRandomize)
     EVT_MENU(wxID_EXIT, MyFrame::OnExit)
     EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
