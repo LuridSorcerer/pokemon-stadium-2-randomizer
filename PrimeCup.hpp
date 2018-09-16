@@ -1,6 +1,7 @@
 #ifndef PRIMECUP_HPP
 #define PRIMECUP_HPP
 
-//
+#define PRIME_CUP_RENTALS 0x1708CB4
+#define PRIME_CUP_COUNT 5
 
 #endif

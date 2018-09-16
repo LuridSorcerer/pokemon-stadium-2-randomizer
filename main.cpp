@@ -124,5 +124,7 @@ void MyFrame::OnHello(wxCommandEvent& event) {
 void MyFrame::OnRandomize(wxCommandEvent& event) {
     randomizer->randomize_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
     randomizer->dump_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
+    randomizer->randomize_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
+    randomizer->dump_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
 }
 

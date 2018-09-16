@@ -36,7 +36,7 @@ Rental Pokémon structure is as follow :
 
 * 0x1708494-0x1708C00 : Little Cup Rental Pokémon
 * 0x1708CB4-0x170B1D0 : Prime Cup / Free Battle Rental Pokémon
-* 0x170BBA4-0x170D220 : Poké Cup / Gym Leader Castle Rental Pokémon
+* ~~0x170BBA4-0x170D220~~ 0x170BB24-: Poké Cup / Gym Leader Castle Rental Pokémon
 
 Why is this 22 bytes long, but the actual data in the ROM appears to be 24 bytes each?
 

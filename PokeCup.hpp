@@ -1,6 +1,7 @@
 #ifndef POKECUP_HPP
 #define POKECUP_HPP
 
-//
+#define POKE_CUP_RENTALS 0x170BB24
+#define POKE_CUP_COUNT 5
 
 #endif
