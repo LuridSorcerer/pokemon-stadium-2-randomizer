@@ -15,7 +15,7 @@ Randomizer::~Randomizer() {
 void Randomizer::randomize_rentals(int cup, int count) {
 
     // seed the random number generator
-    srand(time(NULL));
+    //srand(time(NULL));
 
     for (int j = 0; j < count; j++ ) { 
 

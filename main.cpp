@@ -69,6 +69,9 @@ bool MyApp::OnInit() {
     // This object handles opening, randomizing, and logging
     randomizer = new Randomizer("rom.z64");
 
+    // seed random number generator
+    srand(time(NULL));
+
     return true;
 }
 
