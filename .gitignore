@@ -6,3 +6,5 @@ log.txt
 .vscode
 **.exe
 **.dll
+stderr.txt
+stdout.txt
