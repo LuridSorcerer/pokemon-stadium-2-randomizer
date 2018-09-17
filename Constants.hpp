@@ -9,6 +9,7 @@
 #define MOVES_COUNT 251
 #define POKEMON_COUNT 251
 #define PARTY_SIZE 6
+#define SPECIES 1
 #define MOVE1 4
 #define MOVE2 5
 #define MOVE3 6

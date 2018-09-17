@@ -131,7 +131,8 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     randomizer->randomize_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
     randomizer->dump_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
 
-    // Dump Bernie's party
+    // Randomize Bernie's party
+    randomizer->randomize_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE,true);
     randomizer->dump_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE);
 }
 

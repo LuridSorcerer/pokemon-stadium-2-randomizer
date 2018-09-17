@@ -12,14 +12,21 @@ Randomizer::~Randomizer() {
     logfile.close();
 }
 
-void Randomizer::randomize_rentals(int cup, int count) {
+void Randomizer::randomize_rentals(int cup, int count, bool randpoke) {
 
     // seed the random number generator
     //srand(time(NULL));
 
     for (int j = 0; j < count; j++ ) { 
 
-        // go to pokemon
+        // if we are randomizing species, choose random species
+        if (randpoke) {
+            rom.seekg(cup + (SIZE_OF_POKEMON*j) + SPECIES);
+            uint8_t species = (rand() % POKEMON_COUNT) + 1;
+            rom.write((char*)&species,sizeof(species));
+        }
+
+        // go to pokemon's first move
         rom.seekg(cup + (SIZE_OF_POKEMON*j) + MOVE1);
 
         // for each move

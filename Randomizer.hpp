@@ -13,7 +13,7 @@ class Randomizer {
 public:
     Randomizer(string filename);
     ~Randomizer();
-    void randomize_rentals(int cup, int count);
+    void randomize_rentals(int cup, int count, bool randpoke=false);
     void dump_rentals(int cup, int count);
 private:
     fstream rom;
