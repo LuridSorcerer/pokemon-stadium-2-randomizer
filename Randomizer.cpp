@@ -37,6 +37,7 @@ void Randomizer::dump_rentals(int cup, int count) {
     // read and print level and species
     uint8_t level = 0;
     uint8_t species = 0;
+    uint8_t item = 0;
 
     logfile << "------------------" << endl;
 
@@ -46,13 +47,15 @@ void Randomizer::dump_rentals(int cup, int count) {
         // seek to pokemon
         rom.seekg(cup + (SIZE_OF_POKEMON * i));
 
-        // read level and species
+        // read level, species, and held item
         rom.read((char*)&level,sizeof(level));
         rom.read((char*)&species,sizeof(species));
+        rom.read((char*)&item,sizeof(item));
 
         // write level and name
         logfile << "Level " << (int)level << " " 
-            << (int)species << ":" << PokemonNames[species] <<  endl;
+            << (int)species << ":" << PokemonNames[species] 
+            <<  " (" << ItemNames[item] << ")" << endl;
         
         // write out moveset
         rom.seekg(cup + (SIZE_OF_POKEMON * i) + MOVE1);

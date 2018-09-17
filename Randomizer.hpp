@@ -6,6 +6,7 @@ using namespace std;
 
 #include "PokemonNames.hpp"
 #include "Moves.hpp"
+#include "Items.hpp"
 #include "Constants.hpp" 
 
 class Randomizer {
