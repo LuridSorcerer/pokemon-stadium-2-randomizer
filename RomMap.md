@@ -22,13 +22,13 @@ This section is not explained and therefore unhelpful.
 
 * 0xA0084 - Little Cup Rules
 
-
 ## Rental Pokémon
 
 Rental Pokémon structure is as follow :
-* uu vv 00 00 ww ww ww ww 00 xx yy yy yy yy yy yy yy yy yy yy zz zz __00 00__
+* uu vv hh 00 ww ww ww ww 00 xx yy yy yy yy yy yy yy yy yy yy zz zz __00 00__
 * uu : Level
 * vv : Specie id
+* hh : Held item
 * ww : Moveset
 * xx : Happiness
 * yy : Stat exp
@@ -40,7 +40,7 @@ Rental Pokémon structure is as follow :
 
 ~~Why is this 22 bytes long, but the actual data in the ROM appears to be 24 bytes each?~~
 
-Yeah, it's 24 bytes. And that first 00 appears to be related to held items. More research required.
+Yeah, it's 24 bytes. The byte after the species is the held item.
 
 ## Pokémon Base Stats
 
