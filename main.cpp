@@ -131,8 +131,37 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     randomizer->randomize_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
     randomizer->dump_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
 
-    // Randomize Bernie's party
+    // Bernie
     randomizer->randomize_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE,true);
     randomizer->dump_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE);
+
+    // Stacy
+    randomizer->randomize_rentals(LITTLE_CUP_STACY,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_STACY,PARTY_SIZE);
+
+    // Grant
+    randomizer->randomize_rentals(LITTLE_CUP_GRANT,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_GRANT,PARTY_SIZE);
+
+    // Janet
+    randomizer->randomize_rentals(LITTLE_CUP_JANET,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_JANET,PARTY_SIZE);
+
+    // Clark
+    randomizer->randomize_rentals(LITTLE_CUP_CLARK,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_CLARK,PARTY_SIZE);
+
+    // Cora
+    randomizer->randomize_rentals(LITTLE_CUP_CORA,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_CORA,PARTY_SIZE);
+
+    // Tina
+    randomizer->randomize_rentals(LITTLE_CUP_TINA,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_TINA,PARTY_SIZE);
+
+    // Rex
+    randomizer->randomize_rentals(LITTLE_CUP_REX,PARTY_SIZE,true);
+    randomizer->dump_rentals(LITTLE_CUP_REX,PARTY_SIZE);
+
 }
 
