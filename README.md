@@ -25,7 +25,12 @@ This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developi
 ### Windows
 
 1. Set up wxWidgets
-    * I compiled it with Mingw-w64. The win-builds version did not work, so I used this package from SourceForge. (Don't forget to add the bin folder to your path!) https://sourceforge.net/projects/mingw-w64/
+    * I compiled it with Mingw-w64. The win-builds version did not work, so I used this package from SourceForge: https://sourceforge.net/projects/mingw-w64/
+    
+        Don't forget to add the bin folder to your path!
+
+        It is possible that the pre-built binaries could work with Visual Studio, but I did not test this. glhf 
+
     * This YouTube video pointed me in the right direction as far as the compilation goes: https://www.youtube.com/watch?v=vmobZRIlBMU
         * Download the wxWidgets code:
         https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.zip
@@ -34,8 +39,7 @@ This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developi
             > \> cd \wxWidgets-3.0.4\build\msw
         * Build wxWidgets
             > \> mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11 
-        * Wait a half an hour or so depending on your PC
-    * May God have mercy on your soul.
+        * Wait a half an hour or so depending on your PC. May God have mercy on your soul.
 
 2. Compile
 
@@ -71,5 +75,7 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
     I want to add the ability to randomize enemy trainer Pokemon, randomize stats (DVs and stat EXP), and held items. 
     
     For this, I'll need to do some independent research on the ROM, its data structures, and data locations. The ROM map I found was inadequate and a good portion of the information in it was incorrect. While this map provided a good starting point, it has lived out its usefulness and development will have to slow down as I do more research. 
+
+    Banning specific moves and Pokemon would probably be a nice feature to have. There's also nothing preventing a Pokemon from knowing the same move multiple times, but I have yet to see that actually happen. 
 
     Oh, and I should probably do some error checking to make sure the ROM is valid before randomizing it. Because right now, there are no checks whatsoever. 
