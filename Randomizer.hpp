@@ -14,8 +14,12 @@ class Randomizer {
 public:
     Randomizer(std::string filename);
     ~Randomizer();
-    void randomize_rentals(int cup, int count, bool randpoke=false);
-    void dump_rentals(int cup, int count);
+    void randomize_pokemon(int offset, int count, bool randpoke=false);
+    void randomize_rentals();
+    void randomize_trainers();
+    void dump_pokemon(int offset, int count);
+    void dump_rentals();
+    void dump_trainers();
 private:
     std::fstream rom;
     std::fstream logfile;

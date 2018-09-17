@@ -119,49 +119,12 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     wxString path = filepicker->GetPath();
     randomizer = new Randomizer( path.ToStdString() );
 
-    // randomize Little Cup rentals 
-    randomizer->randomize_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
-    randomizer->dump_rentals(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
+    // randomize rental Pokemon
+    randomizer->randomize_rentals();
+    randomizer->dump_rentals();
 
-    // randomize Poke Cup rentals
-    randomizer->randomize_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
-    randomizer->dump_rentals(POKE_CUP_RENTALS,POKE_CUP_COUNT);
-
-    // randomize Prime Cup rentals
-    randomizer->randomize_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
-    randomizer->dump_rentals(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
-
-    // Bernie
-    randomizer->randomize_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_BERNIE,PARTY_SIZE);
-
-    // Stacy
-    randomizer->randomize_rentals(LITTLE_CUP_STACY,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_STACY,PARTY_SIZE);
-
-    // Grant
-    randomizer->randomize_rentals(LITTLE_CUP_GRANT,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_GRANT,PARTY_SIZE);
-
-    // Janet
-    randomizer->randomize_rentals(LITTLE_CUP_JANET,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_JANET,PARTY_SIZE);
-
-    // Clark
-    randomizer->randomize_rentals(LITTLE_CUP_CLARK,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_CLARK,PARTY_SIZE);
-
-    // Cora
-    randomizer->randomize_rentals(LITTLE_CUP_CORA,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_CORA,PARTY_SIZE);
-
-    // Tina
-    randomizer->randomize_rentals(LITTLE_CUP_TINA,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_TINA,PARTY_SIZE);
-
-    // Rex
-    randomizer->randomize_rentals(LITTLE_CUP_REX,PARTY_SIZE,true);
-    randomizer->dump_rentals(LITTLE_CUP_REX,PARTY_SIZE);
-
+    // randomize trainers
+    randomizer->randomize_trainers();
+    randomizer->dump_trainers();
 }
 

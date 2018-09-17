@@ -10,7 +10,7 @@ Randomizer::~Randomizer() {
     logfile.close();
 }
 
-void Randomizer::randomize_rentals(int cup, int count, bool randpoke) {
+void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
 
     for (int j = 0; j < count; j++ ) { 
 
@@ -35,7 +35,25 @@ void Randomizer::randomize_rentals(int cup, int count, bool randpoke) {
     }
 }
 
-void Randomizer::dump_rentals(int cup, int count) {
+void Randomizer::randomize_rentals() {
+    randomize_pokemon(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
+    randomize_pokemon(POKE_CUP_RENTALS,POKE_CUP_COUNT);
+    randomize_pokemon(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
+}
+
+void Randomizer::randomize_trainers() {
+    /* LITTLE CUP */
+    randomize_pokemon(LITTLE_CUP_BERNIE,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_STACY,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_GRANT,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_JANET,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_CLARK,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_CORA,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_TINA,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_REX,PARTY_SIZE,true);
+}
+
+void Randomizer::dump_pokemon(int cup, int count) {
     // read and print level and species
     uint8_t level = 0;
     uint8_t species = 0;
@@ -70,4 +88,22 @@ void Randomizer::dump_rentals(int cup, int count) {
         }
         logfile << std::endl;
     }
+}
+
+void Randomizer::dump_rentals() {
+    dump_pokemon(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
+    dump_pokemon(POKE_CUP_RENTALS,POKE_CUP_COUNT);
+    dump_pokemon(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
+}
+
+void Randomizer::dump_trainers() {
+    /* LITTLE CUP */
+    dump_pokemon(LITTLE_CUP_BERNIE,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_STACY,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_GRANT,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_JANET,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_CLARK,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_CORA,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_TINA,PARTY_SIZE);
+    dump_pokemon(LITTLE_CUP_REX,PARTY_SIZE);
 }
