@@ -1,10 +1,8 @@
 #include "Randomizer.hpp"
 
-#include <ctime>
-
-Randomizer::Randomizer(string filename) {
-    rom.open(filename, ios::in | ios::out | ios::binary);
-    logfile.open("log.txt", ios::out );
+Randomizer::Randomizer(std::string filename) {
+    rom.open(filename, std::ios::in | std::ios::out | std::ios::binary);
+    logfile.open("log.txt", std::ios::out );
 }
 
 Randomizer::~Randomizer() {
@@ -13,9 +11,6 @@ Randomizer::~Randomizer() {
 }
 
 void Randomizer::randomize_rentals(int cup, int count, bool randpoke) {
-
-    // seed the random number generator
-    //srand(time(NULL));
 
     for (int j = 0; j < count; j++ ) { 
 
@@ -46,7 +41,7 @@ void Randomizer::dump_rentals(int cup, int count) {
     uint8_t species = 0;
     uint8_t item = 0;
 
-    logfile << "------------------" << endl;
+    logfile << "------------------" << std::endl;
 
     // go to first LittleCup Pokemon
     for (int i = 0; i < count;  i++) {
@@ -62,7 +57,7 @@ void Randomizer::dump_rentals(int cup, int count) {
         // write level and name
         logfile << "Level " << (int)level << " " 
             << (int)species << ":" << PokemonNames[species] 
-            <<  " (" << ItemNames[item] << ")" << endl;
+            <<  " (" << ItemNames[item] << ")" << std::endl;
         
         // write out moveset
         rom.seekg(cup + (SIZE_OF_POKEMON * i) + MOVE1);
@@ -70,9 +65,9 @@ void Randomizer::dump_rentals(int cup, int count) {
         for (int j = 0; j < 4; j++) {
             uint8_t move = 0;
             rom.read((char*)&move,sizeof(move));
-            logfile << Moves[move];
+            logfile << MoveName[move];
             if (j < 3) { logfile << " / "; }
         }
-        logfile << endl;
+        logfile << std::endl;
     }
 }

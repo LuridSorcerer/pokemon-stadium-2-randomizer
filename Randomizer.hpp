@@ -2,7 +2,8 @@
 #define RANDOMIZER_HPP
 
 #include <fstream>
-using namespace std;
+#include <ctime>
+#include <string>
 
 #include "PokemonNames.hpp"
 #include "Moves.hpp"
@@ -11,13 +12,13 @@ using namespace std;
 
 class Randomizer {
 public:
-    Randomizer(string filename);
+    Randomizer(std::string filename);
     ~Randomizer();
     void randomize_rentals(int cup, int count, bool randpoke=false);
     void dump_rentals(int cup, int count);
 private:
-    fstream rom;
-    fstream logfile;
+    std::fstream rom;
+    std::fstream logfile;
 };
 
 #endif

@@ -4,7 +4,7 @@
 #include <string>
 
 const std::string ItemNames[] = {
-    "-", // 0x0
+    "No Item", // 0x0
     "Master Ball ",
     "Ultra Ball ",
     "BrightPowder ",
