@@ -14,6 +14,7 @@ class Randomizer {
 public:
     Randomizer(std::string filename);
     ~Randomizer();
+    bool verify_rom();
     void randomize_pokemon(int offset, int count, bool randpoke=false);
     void randomize_rentals();
     void randomize_trainers();

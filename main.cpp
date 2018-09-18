@@ -119,12 +119,21 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     wxString path = filepicker->GetPath();
     randomizer = new Randomizer( path.ToStdString() );
 
-    // randomize rental Pokemon
-    randomizer->randomize_rentals();
-    randomizer->dump_rentals();
+    // verify the ROM before making changes
+    if (randomizer->verify_rom()) { 
 
-    // randomize trainers
-    randomizer->randomize_trainers();
-    randomizer->dump_trainers();
+        // randomize rental Pokemon
+        randomizer->randomize_rentals();
+        randomizer->dump_rentals();
+
+        // randomize trainers
+        randomizer->randomize_trainers();
+        randomizer->dump_trainers();
+    } else {
+        // pop up a dialog or something
+    }
+
+    // done randomizing, free up the randomizer
+    delete randomizer;
 }
 

@@ -10,6 +10,24 @@ Randomizer::~Randomizer() {
     logfile.close();
 }
 
+bool Randomizer::verify_rom() {
+    
+    // allocate some space to read the title
+    char title[0x15];
+    
+    // read the title from the ROM
+    rom.seekg(0x20);
+    rom.read(title,0x15);
+
+    // if it matches, return true
+    if (strcmp(title,"POKEMON STADIUM 2   ") == 0) {
+        return true;
+    }
+    return false;
+
+
+}
+
 void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
 
     for (int j = 0; j < count; j++ ) { 
