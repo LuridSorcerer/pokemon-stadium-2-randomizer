@@ -129,8 +129,11 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
         // randomize trainers
         randomizer->randomize_trainers();
         randomizer->dump_trainers();
+
+        SetStatusText("Randomization complete!");
     } else {
         // pop up a dialog or something
+        SetStatusText("ROM not valid. Randomizaton cancelled.");
     }
 
     // done randomizing, free up the randomizer
