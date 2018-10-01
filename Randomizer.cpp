@@ -69,6 +69,16 @@ void Randomizer::randomize_trainers() {
     randomize_pokemon(LITTLE_CUP_CORA,PARTY_SIZE,true);
     randomize_pokemon(LITTLE_CUP_TINA,PARTY_SIZE,true);
     randomize_pokemon(LITTLE_CUP_REX,PARTY_SIZE,true);
+
+    // PokeCup, PokeBall
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE1,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE2,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE3,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE4,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE5,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE6,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLES,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLEF,PARTY_SIZE,true);
 }
 
 void Randomizer::dump_pokemon(int cup, int count) {
