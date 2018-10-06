@@ -79,6 +79,46 @@ void Randomizer::randomize_trainers() {
     randomize_pokemon(POKECUP_POKEBALL_BATTLE6,PARTY_SIZE,true);
     randomize_pokemon(POKECUP_POKEBALL_BATTLES,PARTY_SIZE,true);
     randomize_pokemon(POKECUP_POKEBALL_BATTLEF,PARTY_SIZE,true);
+
+    // PokeCup, GreatBall
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE1,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE2,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE3,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE4,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE5,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE6,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLES,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLEF,PARTY_SIZE,true);
+
+    // PokeCup, UltraBall
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true);
+
+    // PokeCup, MasterBall
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true);
+
+    // PrimeCup
+    randomize_pokemon(PRIMECUP_BATTLE1,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE2,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE3,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE4,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE5,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE6,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLES,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLEF,PARTY_SIZE,true);
 }
 
 void Randomizer::dump_pokemon(int cup, int count) {
