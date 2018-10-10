@@ -51,7 +51,7 @@ enum MOVES {
     BITE,
     GROWL,
     ROAR,
-    SING,
+    SSING,
     SUPERSONIC,
     SONICBOOM,
     DISABLE,

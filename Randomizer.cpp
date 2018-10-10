@@ -1,4 +1,6 @@
 #include "Randomizer.hpp"
+#include <algorithm>
+#include <iostream>
 
 Randomizer::Randomizer(std::string filename) {
     rom.open(filename, std::ios::in | std::ios::out | std::ios::binary);
@@ -45,12 +47,25 @@ void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
         // for each move
         for (int i = 0; i < 4; i++) { 
 
+            // banned moves
+            uint8_t BannedMoves[] = {
+                STRUGGLE,
+                SONICBOOM,
+                DRAGONRAGE,
+            };
+
             // randomly pick a move and insert it
-            uint8_t move = (rand() % MOVES_COUNT) + 1;
+            uint8_t move = rand() % MOVES_COUNT + 1;
+
+            // if a banned move is selected, pick another
+            while (std::find(std::begin(BannedMoves),std::end(BannedMoves),move) != std::end(BannedMoves) ) {
+                move = rand() % MOVES_COUNT + 1;
+            }
+
             rom.write((char*)&move,sizeof(move));
         }
 
-    }
+    } 
 }
 
 void Randomizer::randomize_rentals() {
