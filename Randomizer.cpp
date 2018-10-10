@@ -30,7 +30,7 @@ bool Randomizer::verify_rom() {
 
 }
 
-void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
+void Randomizer::randomize_pokemon(int cup, int count, bool randpoke, bool bannedMoves) {
 
     for (int j = 0; j < count; j++ ) { 
 
@@ -58,7 +58,9 @@ void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
             uint8_t move = rand() % MOVES_COUNT + 1;
 
             // if a banned move is selected, pick another
-            while (std::find(std::begin(BannedMoves),std::end(BannedMoves),move) != std::end(BannedMoves) ) {
+            while (
+                bannedMoves &&
+                std::find(std::begin(BannedMoves),std::end(BannedMoves),move) != std::end(BannedMoves) ) {
                 move = rand() % MOVES_COUNT + 1;
             }
 
@@ -68,72 +70,72 @@ void Randomizer::randomize_pokemon(int cup, int count, bool randpoke) {
     } 
 }
 
-void Randomizer::randomize_rentals() {
-    randomize_pokemon(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT);
-    randomize_pokemon(POKE_CUP_RENTALS,POKE_CUP_COUNT);
-    randomize_pokemon(PRIME_CUP_RENTALS,PRIME_CUP_COUNT);
+void Randomizer::randomize_rentals(bool bannedMoves) {
+    randomize_pokemon(LITTLE_CUP_RENTALS,LITTLE_CUP_COUNT, false, bannedMoves);
+    randomize_pokemon(POKE_CUP_RENTALS,POKE_CUP_COUNT, false, bannedMoves);
+    randomize_pokemon(PRIME_CUP_RENTALS,PRIME_CUP_COUNT, false, bannedMoves);
 }
 
-void Randomizer::randomize_trainers() {
+void Randomizer::randomize_trainers(bool bannedMoves) {
     /* LITTLE CUP */
-    randomize_pokemon(LITTLE_CUP_BERNIE,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_STACY,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_GRANT,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_JANET,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_CLARK,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_CORA,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_TINA,PARTY_SIZE,true);
-    randomize_pokemon(LITTLE_CUP_REX,PARTY_SIZE,true);
+    randomize_pokemon(LITTLE_CUP_BERNIE,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_STACY,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_GRANT,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_JANET,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_CLARK,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_CORA,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_TINA,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(LITTLE_CUP_REX,PARTY_SIZE,true, bannedMoves);
 
     // PokeCup, PokeBall
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE1,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE2,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE3,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE4,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE5,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLE6,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLES,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_POKEBALL_BATTLEF,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE1,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE2,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE3,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE4,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE5,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLE6,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLES,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_POKEBALL_BATTLEF,PARTY_SIZE,true, bannedMoves);
 
     // PokeCup, GreatBall
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE1,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE2,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE3,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE4,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE5,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLE6,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLES,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_GREATBALL_BATTLEF,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE1,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE2,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE3,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE4,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE5,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLE6,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLES,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_GREATBALL_BATTLEF,PARTY_SIZE,true, bannedMoves);
 
     // PokeCup, UltraBall
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true, bannedMoves);
 
     // PokeCup, MasterBall
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true);
-    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE1,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE2,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE3,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE4,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE5,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLE6,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLES,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(POKECUP_ULTRABALL_BATTLEF,PARTY_SIZE,true, bannedMoves);
 
     // PrimeCup
-    randomize_pokemon(PRIMECUP_BATTLE1,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLE2,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLE3,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLE4,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLE5,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLE6,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLES,PARTY_SIZE,true);
-    randomize_pokemon(PRIMECUP_BATTLEF,PARTY_SIZE,true);
+    randomize_pokemon(PRIMECUP_BATTLE1,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLE2,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLE3,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLE4,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLE5,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLE6,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLES,PARTY_SIZE,true, bannedMoves);
+    randomize_pokemon(PRIMECUP_BATTLEF,PARTY_SIZE,true, bannedMoves);
 }
 
 void Randomizer::dump_pokemon(int cup, int count) {
@@ -189,4 +191,14 @@ void Randomizer::dump_trainers() {
     dump_pokemon(LITTLE_CUP_CORA,PARTY_SIZE);
     dump_pokemon(LITTLE_CUP_TINA,PARTY_SIZE);
     dump_pokemon(LITTLE_CUP_REX,PARTY_SIZE);
+
+    // PrimeCup
+    dump_pokemon(PRIMECUP_BATTLE1,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLE2,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLE3,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLE4,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLE5,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLE6,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLES,PARTY_SIZE);
+    dump_pokemon(PRIMECUP_BATTLEF,PARTY_SIZE);
 }

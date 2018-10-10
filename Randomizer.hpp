@@ -15,9 +15,9 @@ public:
     Randomizer(std::string filename);
     ~Randomizer();
     bool verify_rom();
-    void randomize_pokemon(int offset, int count, bool randpoke=false);
-    void randomize_rentals();
-    void randomize_trainers();
+    void randomize_pokemon(int offset, int count, bool randpoke=false, bool bannedMoves=false);
+    void randomize_rentals(bool bannedMoves);
+    void randomize_trainers(bool bannedMoves);
     void dump_pokemon(int offset, int count);
     void dump_rentals();
     void dump_trainers();

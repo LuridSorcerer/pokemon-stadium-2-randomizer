@@ -32,7 +32,9 @@ private:
     void OnRandomize(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
+    void OnBannedMoves(wxCommandEvent& event);
 
+    wxCheckBox *chkBannedMoves;
     wxFilePickerCtrl *filepicker;
 
     // create an event table so we can receive mouse and keyboard events
@@ -44,12 +46,14 @@ private:
 // Many built-in events do not need to be defined manually (ex. Exit, Help)
 enum {
     ID_Randomize = 1,
+    ID_ChkBannedMoves,
     ID_Button,
     ID_FilePickerCtrl
 };
 
 // create event table
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
+    EVT_CHECKBOX(ID_ChkBannedMoves,MyFrame::OnBannedMoves)
     EVT_BUTTON(ID_Button,MyFrame::OnRandomize)
     EVT_MENU(wxID_EXIT, MyFrame::OnExit)
     EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
@@ -97,8 +101,10 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 
     // Let's try to add a couple of buttons
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
+    chkBannedMoves = new wxCheckBox(this,ID_ChkBannedMoves,wxT("Ban some moves"),wxPoint(10,10));
     filepicker = new wxFilePickerCtrl(this,ID_FilePickerCtrl);
     sizer->Add(filepicker, 0,wxEXPAND,0);
+    sizer->Add(chkBannedMoves,0,wxEXPAND,0);
     sizer->Add(new wxButton(this,ID_Button,"Randomize"),1,wxEXPAND | wxALL, 10);
     SetSizer(sizer);
 }
@@ -113,6 +119,11 @@ void MyFrame::OnAbout(wxCommandEvent& event) {
     wxOK | wxICON_INFORMATION);
 }
 
+
+void MyFrame::OnBannedMoves(wxCommandEvent& event) {
+    // Nothing yet
+}
+
 void MyFrame::OnRandomize(wxCommandEvent& event) {
 
     // create Randomizer
@@ -123,11 +134,11 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     if (randomizer->verify_rom()) { 
 
         // randomize rental Pokemon
-        randomizer->randomize_rentals();
+        randomizer->randomize_rentals(chkBannedMoves->GetValue());
         randomizer->dump_rentals();
 
         // randomize trainers
-        randomizer->randomize_trainers();
+        randomizer->randomize_trainers(chkBannedMoves->GetValue());
         randomizer->dump_trainers();
 
         SetStatusText("Randomization complete!");
