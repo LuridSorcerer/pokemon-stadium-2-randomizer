@@ -35,6 +35,10 @@ private:
     void OnBannedMoves(wxCommandEvent& event);
 
     wxCheckBox *chkBannedMoves;
+    wxCheckBox *chkRandRentals;
+    wxCheckBox *chkRandLittleCup;
+    wxCheckBox *chkRandPokeCup;
+    wxCheckBox *chkRandPrimeCup;
     wxFilePickerCtrl *filepicker;
 
     // create an event table so we can receive mouse and keyboard events
@@ -48,7 +52,11 @@ enum {
     ID_Randomize = 1,
     ID_ChkBannedMoves,
     ID_Button,
-    ID_FilePickerCtrl
+    ID_FilePickerCtrl,
+    ID_ChkRandRentals,
+    ID_ChkRandLittleCup,
+    ID_ChkRandPokeCup,
+    ID_ChkRandPrimeCup
 };
 
 // create event table
@@ -101,11 +109,27 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 
     // Let's try to add a couple of buttons
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
-    chkBannedMoves = new wxCheckBox(this,ID_ChkBannedMoves,wxT("Ban some moves"),wxPoint(10,10));
+    
+    chkRandRentals = new wxCheckBox(this,ID_ChkRandRentals,wxT("Randomize Rentals"));
+    chkRandRentals->SetValue(true);
+    chkRandLittleCup = new wxCheckBox(this,ID_ChkRandLittleCup,wxT("Randomize Little Cup"));
+    chkRandLittleCup->SetValue(true);
+    chkRandPokeCup = new wxCheckBox(this,ID_ChkRandPokeCup,wxT("Randomize Poke Cup"));
+    chkRandPokeCup->SetValue(true);
+    chkRandPrimeCup = new wxCheckBox(this,ID_ChkRandPrimeCup,wxT("Randomize Prime Cup"));
+    chkRandPrimeCup->SetValue(true);
+    chkBannedMoves = new wxCheckBox(this,ID_ChkBannedMoves,wxT("Ban some moves"));
+    chkBannedMoves->SetValue(true);
     filepicker = new wxFilePickerCtrl(this,ID_FilePickerCtrl);
+
     sizer->Add(filepicker, 0,wxEXPAND,0);
+    sizer->Add(chkRandRentals,0,wxEXPAND,0);
+    sizer->Add(chkRandLittleCup,0,wxEXPAND,0);
+    sizer->Add(chkRandPokeCup,0,wxEXPAND,0);
+    sizer->Add(chkRandPrimeCup,0,wxEXPAND,0);
     sizer->Add(chkBannedMoves,0,wxEXPAND,0);
     sizer->Add(new wxButton(this,ID_Button,"Randomize"),1,wxEXPAND | wxALL, 10);
+    
     SetSizer(sizer);
 }
 
@@ -134,8 +158,10 @@ void MyFrame::OnRandomize(wxCommandEvent& event) {
     if (randomizer->verify_rom()) { 
 
         // randomize rental Pokemon
-        randomizer->randomize_rentals(chkBannedMoves->GetValue());
-        randomizer->dump_rentals();
+        if(chkRandLittleCup->GetValue()) {
+            randomizer->randomize_rentals(chkBannedMoves->GetValue());
+            randomizer->dump_rentals();
+        }
 
         // randomize trainers
         randomizer->randomize_trainers(chkBannedMoves->GetValue());
