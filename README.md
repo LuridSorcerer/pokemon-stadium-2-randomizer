@@ -74,10 +74,10 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
 
     No. Please keep a backup copy of your original ROM.
 
-* What are the future plans?
+* What's next?
 
-    I want to add the ability to randomize enemy trainer Pokemon, randomize stats (DVs and stat EXP), and held items. 
-    
-    For this, I'll need to do some independent research on the ROM, its data structures, and data locations. The ROM map I found was inadequate and a good portion of the information in it was incorrect. While this map provided a good starting point, it has lived out its usefulness and development will have to slow down as I do more research. 
-
-    Banning specific moves and Pokemon would probably be a nice feature to have. There's also nothing preventing a Pokemon from knowing the same move multiple times, but I have yet to see that actually happen. 
+	* Randomize remaining leagues and second rounds. 
+	* Randomize Pokemon nicknames
+	* Refactor and clean up randomization code
+	* Read Pokemon, move, and items names from ROM instead of header files
+	* Randomize held items
