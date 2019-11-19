@@ -1,8 +1,10 @@
 # ROM Map
 
-Stolen without regard for anyone's rights or feelings from https://datacrystal.romhacking.net/wiki/Pok%C3%A9mon_Stadium_2:ROM_map. 
+Information sourced from:
 
-Some of it is wrong anyway.
+https://datacrystal.romhacking.net/wiki/Pok%C3%A9mon_Stadium_2:ROM_map. 
+
+Some corrections were made.
 
 ## Moves data
 Moves data structure is as follow :
@@ -18,7 +20,7 @@ Moves data structure is as follow :
 
 ## Cups Rules
 
-This section is not explained and therefore unhelpful.
+Not sure how this works, no explanation provided.
 
 * 0xA0084 - Little Cup Rules
 
@@ -33,14 +35,13 @@ Rental Pokémon structure is as follow :
 * xx : Happiness
 * yy : Stat exp
 * zz : IVs
+* Research needed on last two bytes. May simply be terminator. 
 
-* 0x1708494 - ~~0x1708C00~~ 0x1708CA4 : Little Cup Rental Pokémon
-* 0x1708CB4 - ~~0x170B1D0~~ 0x170A3C4 : Prime Cup / Free Battle Rental Pokémon
-* ~~0x170BBA4-0x170D220~~ 0x170BB24 - 0x170D234: Poké Cup / Gym Leader Castle Rental Pokémon
+* 0x1708494 - 0x1708CA4 : Little Cup Rental Pokémon
+* 0x1708CB4 - 0x170A3C4 : Prime Cup / Free Battle Rental Pokémon
+* 0x170BB24 - 0x170D234: Poké Cup / Gym Leader Castle Rental Pokémon
 
-~~Why is this 22 bytes long, but the actual data in the ROM appears to be 24 bytes each?~~
-
-Yeah, it's 24 bytes. The byte after the species is the held item.
+Data structure is 24 bytes per Pokemon.
 
 ## Pokémon Base Stats
 
@@ -60,15 +61,13 @@ Pokémon Base Stats structure is as follow :
 
 ## Game text
 
-Do I need literally any of this? Probably not.
-
-* 0x1D718B8-0x1D720DF : Pokémon names
+* __0x1D718B8-0x1D720DF : Pokémon names__
 * 0x1D724E0-0x1D72C9F : Pokémon species
 * 0x1D730A0-0x1D736BF : Pokémon sizes
 * 0x1D73AB0-0x1D740C6 : Pokémon weights
 * 0x1D744C0-0x1D7A551 : Pokédex descriptions (Gold / Silver)
 * 0x1D7A950-0x1D809A7 : Pokédex descriptions (Cristal)
-* 0x1D80DA0-0x1D8170C : Moves names
+* __0x1D80DA0-0x1D8170C : Moves names__
 * 0x1D81B00-0x1D86CC2 : Moves descriptions
 * 0x1D870BC-0x1D878EB : Items names (Gold / Silver / Cristal)
 * 0x1D87CEC-0x1D8910D : Items descriptions (Gold / Silver / Cristal)
@@ -149,7 +148,7 @@ Do I need literally any of this? Probably not.
 * 0x1DC7008-0x1DC7044 : Mystery Gift Dummy text (Unseen)
 * 0x1DC71D8-0x1DC7608 : Debug Menu (Unseen)
 * 0x1DC76A8-0x1DC799E : Custom Rules
-* 0x1DC7AB4-0x1DC7CB1 : CPU Pokémon Nicknames
+* __0x1DC7AB4-0x1DC7CB1 : CPU Pokémon Nicknames__
 * 0x1DC7D14-0x1DC7EC5 : Pokémon Move learning and Evolution
 * 0x1DC82C8-0x1DC8AF2 : Alternate Color Pokémon Nicknames #1
 * 0x1DC8EF8-0x1DC871D : Alternate Color Pokémon Nicknames #2
