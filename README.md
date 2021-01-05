@@ -10,6 +10,10 @@ This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developi
 
 ### Linux
 
+Currently unable to build on my laptop, something broke with the dependency packages. 
+I might either reinstall the OS on here and start over, or change to a newer version of wxWidgets.
+Regardless, I want to do a command-line rewrite first to get the complete logic down. 
+
 1. Set up wxWidgets
     * This link will probably be helpful: https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2
     * > $ sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
@@ -75,6 +79,9 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
     No. Please keep a backup copy of your original ROM.
 
 * What's next?
+
+	* Code reorganization (um, ever heard of folders?)
+	* Dump wxWidgets and do a CLI version, reintegrate GUI after it's done
 
 	* Randomize remaining leagues and second rounds. 
 	* Randomize Pokemon nicknames
