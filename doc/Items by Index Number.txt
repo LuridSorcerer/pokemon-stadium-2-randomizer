@@ -1,0 +1,256 @@
+0x00 	0	? 
+0x01 	1	Master Ball 
+0x02 	2	Ultra Ball 
+0x03 	3	BrightPowder 
+0x04 	4	Great Ball 
+0x05 	5	Poké Ball 
+0x06 	6	Teru-sama 
+0x07 	7	Bicycle 
+0x08 	8	Moon Stone 
+0x09 	9	Antidote 
+0x0A 	10	Burn Heal 
+0x0B 	11	Ice Heal 
+0x0C 	12	Awakening 
+0x0D 	13	Parlyz Heal 
+0x0E 	14	Full Restore 
+0x0F 	15	Max Potion 
+0x10 	16	Hyper Potion 
+0x11 	17	Super Potion 
+0x12 	18	Potion 
+0x13 	19	Escape Rope 
+0x14 	20	Repel 
+0x15 	21	Max Elixer 
+0x16 	22	Fire Stone 
+0x17 	23	Thunderstone 
+0x18 	24	Water Stone 
+0x19 	25	Teru-sama 
+0x1A 	26	HP Up 
+0x1B 	27	Protein 
+0x1C 	28	Iron 
+0x1D 	29	Carbos 
+0x1E 	30	Lucky Punch 
+0x1F 	31	Calcium 
+0x20 	32	Rare Candy 
+0x21 	33	X Accuracy 
+0x22 	34	Leaf Stone 
+0x23 	35	Metal Powder 
+0x24 	36	Nugget 
+0x25 	37	Poké Doll 
+0x26 	38	Full Heal 
+0x27 	39	Revive 
+0x28 	40	Max Revive 
+0x29 	41	Guard Spec. 
+0x2A 	42	Super Repel 
+0x2B 	43	Max Repel 
+0x2C 	44	Dire Hit 
+0x2D 	45	Teru-sama 
+0x2E 	46	Fresh Water 
+0x2F 	47	Soda Pop 
+0x30 	48	Lemonade 
+0x31 	49	X Attack 
+0x32 	50	Teru-sama 
+0x33 	51	X Defend 
+0x34 	52	X Speed 
+0x35 	53	X Special 
+0x36 	54	Coin Case 
+0x37 	55	Itemfinder 
+0x38 	56	Teru-sama 
+0x39 	57	Exp.Share 
+0x3A 	58	Old Rod 
+0x3B 	59	Good Rod 
+0x3C 	60	Silver Leaf 
+0x3D 	61	Super Rod 
+0x3E 	62	PP Up 
+0x3F 	63	Ether 
+0x40 	64	Max Ether 
+0x41 	65	Elixer 
+0x42 	66	Red Scale 
+0x43 	67	SecretPotion 
+0x44 	68	S.S. Ticket 
+0x45 	69	Mystery Egg 
+0x46 	70	Clear Bell* 
+0x47 	71	Silver Wing 
+0x48 	72	Moomoo Milk 
+0x49 	73	Quick Claw 
+0x4A 	74	PSNCureBerry 
+0x4B 	75	Gold Leaf 
+0x4C 	76	Soft Sand 
+0x4D 	77	Sharp Beak 
+0x4E 	78	PRZCureBerry 
+0x4F 	79	Burnt Berry 
+0x50 	80	Ice Berry 
+0x51 	81	Poison Barb 
+0x52 	82	King's Rock 
+0x53 	83	Bitter Berry 
+0x54 	84	Mint Berry 
+0x55 	85	Red Apricorn 
+0x56 	86	TinyMushroom 
+0x57 	87	Big Mushroom 
+0x58 	88	SilverPowder 
+0x59 	89	Blu Apricorn 
+0x5A 	90	Teru-sama 
+0x5B 	91	Amulet Coin 
+0x5C 	92	Ylw Apricorn 
+0x5D 	93	Grn Apricorn 
+0x5E 	94	Cleanse Tag 
+0x5F 	95	Mystic Water 
+0x60 	96	TwistedSpoon 
+0x61 	97	Wht Apricorn 
+0x62 	98	Blackbelt 
+0x63 	99	Blk Apricorn 
+0x64 	100	Teru-sama 
+0x65 	101	Pnk Apricorn 
+0x66 	102	BlackGlasses 
+0x67 	103	SlowpokeTail 
+0x68 	104	Pink Bow 
+0x69 	105	Stick 
+0x6A 	106	Smoke Ball 
+0x6B 	107	NeverMeltIce 
+0x6C 	108	Magnet 
+0x6D 	109	MiracleBerry 
+0x6E 	110	Pearl 
+0x6F 	111	Big Pearl 
+0x70 	112	Everstone 
+0x71 	113	Spell Tag 
+0x72 	114	RageCandyBar 
+0x73 	115	GS Ball* 
+0x74 	116	Blue Card* 
+0x75 	117	Miracle Seed 
+0x76 	118	Thick Club 
+0x77 	119	Focus Band 
+0x78 	120	Teru-sama 
+0x79 	121	EnergyPowder 
+0x7A 	122	Energy Root 
+0x7B 	123	Heal Powder 
+0x7C 	124	Revival Herb 
+0x7D 	125	Hard Stone 
+0x7E 	126	Lucky Egg 
+0x7F 	127	Card Key 
+0x80 	128	Machine Part 
+0x81 	129	Egg Ticket* 
+0x82 	130	Lost Item 
+0x83 	131	Stardust 
+0x84 	132	Star Piece 
+0x85 	133	Basement Key 
+0x86 	134	Pass 
+0x87 	135	Teru-sama 
+0x88 	136	Teru-sama 
+0x89 	137	Teru-sama 
+0x8A 	138	Charcoal 
+0x8B 	139	Berry Juice 
+0x8C 	140	Scope Lens 
+0x8D 	141	Teru-sama 
+0x8E 	142	Teru-sama 
+0x8F 	143	Metal Coat 
+0x90 	144	Dragon Fang 
+0x91 	145	Teru-sama 
+0x92 	146	Leftovers 
+0x93 	147	Teru-sama 
+0x94 	148	Teru-sama 
+0x95 	149	Teru-sama 
+0x96 	150	MysteryBerry 
+0x97 	151	Dragon Scale 
+0x98 	152	Berserk Gene 
+0x99 	153	Teru-sama 
+0x9A 	154	Teru-sama 
+0x9B 	155	Teru-sama 
+0x9C 	156	Sacred Ash 
+0x9D 	157	Heavy Ball 
+0x9E 	158	Flower Mail 
+0x9F 	159	Level Ball 
+0xA0 	160	Lure Ball 
+0xA1 	161	Fast Ball 
+0xA2 	162	Teru-sama 
+0xA3 	163	Light Ball 
+0xA4 	164	Friend Ball 
+0xA5 	165	Moon Ball 
+0xA6 	166	Love Ball 
+0xA7 	167	Normal Box 
+0xA8 	168	Gorgeous Box 
+0xA9 	169	Sun Stone 
+0xAA 	170	Polkadot Bow 
+0xAB 	171	Teru-sama 
+0xAC 	172	Up-Grade 
+0xAD 	173	Berry 
+0xAE 	174	Gold Berry 
+0xAF 	175	SquirtBottle 
+0xB0 	176	Teru-sama 
+0xB1 	177	Park Ball 
+0xB2 	178	Rainbow Wing 
+0xB3 	179	Teru-sama 
+0xB4 	180	Brick Piece 
+0xB5 	181	Surf Mail 
+0xB6 	182	Litebluemail 
+0xB7 	183	Portraitmail 
+0xB8 	184	Lovely Mail 
+0xB9 	185	Eon Mail 
+0xBA 	186	Morph Mail 
+0xBB 	187	Bluesky Mail 
+0xBC 	188	Music Mail 
+0xBD 	189	Mirage Mail 
+0xBE 	190	Teru-sama 
+0xBF 	191	TM01 
+0xC0 	192	TM02 
+0xC1 	193	TM03 
+0xC2 	194	TM04 
+0xC3 	195	TM04 
+0xC4 	196	TM05 
+0xC5 	197	TM06 
+0xC6 	198	TM07 
+0xC7 	199	TM08 
+0xC8 	200	TM09 
+0xC9 	201	TM10 
+0xCA 	202	TM11 
+0xCB 	203	TM12 
+0xCC 	204	TM13 
+0xCD 	205	TM14 
+0xCE 	206	TM15 
+0xCF 	207	TM16 
+0xD0 	208	TM17 
+0xD1 	209	TM18 
+0xD2 	210	TM19 
+0xD3 	211	TM20 
+0xD4 	212	TM21 
+0xD5 	213	TM22 
+0xD6 	214	TM23 
+0xD7 	215	TM24 
+0xD8 	216	TM25 
+0xD9 	217	TM26 
+0xDA 	218	TM27 
+0xDB 	219	TM28 
+0xDC 	220	TM28 
+0xDD 	221	TM29 
+0xDE 	222	TM30 
+0xDF 	223	TM31 
+0xE0 	224	TM32 
+0xE1 	225	TM33 
+0xE2 	226	TM34 
+0xE3 	227	TM35 
+0xE4 	228	TM36 
+0xE5 	229	TM37 
+0xE6 	230	TM38 
+0xE7 	231	TM39 
+0xE8 	232	TM40 
+0xE9 	233	TM41 
+0xEA 	234	TM42 
+0xEB 	235	TM43 
+0xEC 	236	TM44 
+0xED 	237	TM45 
+0xEE 	238	TM46 
+0xEF 	239	TM47 
+0xF0 	240	TM48 
+0xF1 	241	TM49 
+0xF2 	242	TM50 
+0xF3 	243	HM01 
+0xF4 	244	HM02 
+0xF5 	245	HM03 
+0xF6 	246	HM04 
+0xF7 	247	HM05 
+0xF8 	248	HM06 
+0xF9 	249	HM07 
+0xFA 	250	HM08 
+0xFB 	251	HM09 
+0xFC 	252	HM10 
+0xFD 	253	HM11 
+0xFE 	254	HM12 
+0xFF 	255	Cancel 
