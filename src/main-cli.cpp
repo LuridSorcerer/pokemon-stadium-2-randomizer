@@ -4,13 +4,33 @@
 
 #include "Randomizer.hpp"
 
+// create a vector for dynamically storing the pokemon names
+std::vector<std::string> pkmn_names;
+std::vector<std::string> item_names;
+std::vector<std::string> move_names;
+
+std::ifstream romfile;
+
+void dump_trainer(int offset) {
+	unsigned char * buffer = new unsigned char[24];
+	romfile.seekg(offset);
+	for (int i = 0; i < 6; i++) {
+	romfile.read((char*)buffer,24);
+		std::cout << "Lv" << (int)buffer[0] << ":" 
+			<< pkmn_names[(int)buffer[1]] << ":" 
+			<< item_names[(int)buffer[2]] << ":" 
+			<< move_names[(int)buffer[4]] << "/" 
+			<< move_names[(int)buffer[5]] << "/" 
+			<< move_names[(int)buffer[6]] << "/" 
+			<< move_names[(int)buffer[7]] << '\n';
+
+	}
+	std::cout << '\n';
+	delete[] buffer;	
+}
+
 int main(int argc, char* argv[]) {
 	
-	// create a vector for dynamically storing the pokemon names
-	std::vector<std::string> pkmn_names;
-	std::vector<std::string> item_names;
-	std::vector<std::string> move_names;
-
 	// create our randomizer object
 	Randomizer* r = new Randomizer("ps2.z64");
 	
@@ -19,7 +39,7 @@ int main(int argc, char* argv[]) {
 		puts("Good rom!");
 		
 		// let's open up the file separately for some experiments...
-		std::ifstream romfile ("ps2.z64");
+		romfile.open("ps2.z64");
 		if (romfile.is_open() ) {
 			puts("file is open");
 			
@@ -41,9 +61,11 @@ int main(int argc, char* argv[]) {
 			}
 			
 			// write the stored names back out
+			/*
 			for (int i = 0; i <= 251; i++) {
 				std::cout << i << ":" << pkmn_names[i] << '\n';
 			}
+			*/
 
 			// seek to where the item names are stored
 			romfile.seekg(0x1D870BC);
@@ -60,9 +82,11 @@ int main(int argc, char* argv[]) {
 			}
 
 			// print out the names
+			/*
 			for (int i = 0; i < item_names.size(); i++) {
 				std::cout << i << ":" << item_names[i] << "\n";
 			}
+			*/
 			
 
 			// seek to where the move names are stored
@@ -80,13 +104,45 @@ int main(int argc, char* argv[]) {
 			}
 
 			// print out the move names
+			/*
 			for (int i = 0; i < move_names.size(); i++) {
 				std::cout << i << ":" << move_names[i] << "\n";
 			}
+			*/
+			
+			// trainer classes
+			romfile.seekg(0x1D9535C);
+
+			// trainer names
+			romfile.seekg(0x1D9570C); 
+
+			// Camper Cole's pokemon
+			std::cout << "Camper Cole\n";
+			dump_trainer(0x1716C04);
+
+			// Player vs. Camper Cole
+			std::cout << "vs. Camper Cole\n";
+			dump_trainer(0x1716B6C);
+
+			// Super Nerd Melvin
+			std::cout << "Super Nerd Melvin\n"; 
+			dump_trainer(0x1716D34);
+
+			// Player vs Super Nerd Melvin
+			std::cout << "vs. Super Nerd Melvin\n";
+			dump_trainer(0x1716C9C);
+
+			// Player vs Swimmer Clayton
+			std::cout << "vs. Swimmer Clayton\n";
+			dump_trainer(0x1716EFC);
+
+			// Player vs Schoolboy Carson
+			std::cout << "vs. Schoolboy Carson\n";
+			dump_trainer(0x1716DCC);
 
 			// done, close file
 			romfile.close();
-			
+
 		}
 	
 	// don't bother if the rom doesn't match
