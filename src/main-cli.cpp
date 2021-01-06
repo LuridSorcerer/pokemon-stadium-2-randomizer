@@ -8,6 +8,8 @@ int main(int argc, char* argv[]) {
 	
 	// create a vector for dynamically storing the pokemon names
 	std::vector<std::string> pkmn_names;
+	std::vector<std::string> item_names;
+	std::vector<std::string> move_names;
 
 	// create our randomizer object
 	Randomizer* r = new Randomizer("ps2.z64");
@@ -42,7 +44,46 @@ int main(int argc, char* argv[]) {
 			for (int i = 0; i <= 251; i++) {
 				std::cout << i << ":" << pkmn_names[i] << '\n';
 			}
+
+			// seek to where the item names are stored
+			romfile.seekg(0x1D870BC);
+
+			// want the items to start at 1, so fill in position 0
+			item_names.push_back("No item");
+
+			// read the names
+			for (int i = 0x0; i < 0xF9; i++) {
+				// read a cstr
+				romfile.getline(name,20,'\0');
+				// push on to the vector
+				item_names.push_back(name);
+			}
+
+			// print out the names
+			for (int i = 0; i < item_names.size(); i++) {
+				std::cout << i << ":" << item_names[i] << "\n";
+			}
 			
+
+			// seek to where the move names are stored
+			romfile.seekg(0x1D80DA0);
+
+			// want to start at position 1, so fill position 0
+			move_names.push_back("-");
+
+			// read the names
+			for (int i = 0; i < 251; i++) { 
+				// read a cstr
+				romfile.getline(name,20,'\0');
+				// push onto the vector
+				move_names.push_back(name);
+			}
+
+			// print out the move names
+			for (int i = 0; i < move_names.size(); i++) {
+				std::cout << i << ":" << move_names[i] << "\n";
+			}
+
 			// done, close file
 			romfile.close();
 			
