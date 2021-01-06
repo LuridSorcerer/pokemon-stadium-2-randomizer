@@ -132,13 +132,13 @@ int main(int argc, char* argv[]) {
 			std::cout << "vs. Super Nerd Melvin\n";
 			dump_trainer(0x1716C9C);
 
-			// Player vs Swimmer Clayton
-			std::cout << "vs. Swimmer Clayton\n";
-			dump_trainer(0x1716EFC);
-
 			// Player vs Schoolboy Carson
 			std::cout << "vs. Schoolboy Carson\n";
 			dump_trainer(0x1716DCC);
+
+			// Player vs Swimmer Clayton
+			std::cout << "vs. Swimmer Clayton\n";
+			dump_trainer(0x1716EFC);
 
 			// done, close file
 			romfile.close();
