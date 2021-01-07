@@ -2,6 +2,9 @@
 #include <iostream>
 #include <vector>
 
+#include <string.h>
+#include <errno.h>
+
 // create a vector for dynamically storing the pokemon names
 std::vector<std::string> pkmn_names;
 std::vector<std::string> item_names;
@@ -12,7 +15,6 @@ std::ifstream romfile;
 void dump_trainer(int offset) {
 	unsigned char * buffer = new unsigned char[24];
 	romfile.seekg(offset);
-	
 	for (int i = 0; i < 6; i++) {
 		romfile.read((char*)buffer,24);
 		if (romfile) {
@@ -26,6 +28,7 @@ void dump_trainer(int offset) {
 
 		} else {
 			puts("File read error");
+			std::cout << romfile.is_open(); 
 		}
 	}
 	std::cout << '\n';
@@ -35,7 +38,7 @@ void dump_trainer(int offset) {
 int main(int argc, char* argv[]) {
 	
 	// let's open up the file for some experiments...
-	romfile.open("ps2.z64");
+	romfile.open("ps2.z64", std::ios::binary);
 	if (romfile.is_open() ) {
 		puts("file is open");
 		
@@ -60,7 +63,7 @@ int main(int argc, char* argv[]) {
 		romfile.seekg(0x1D870BC);
 
 		// want the items to start at 1, so fill in position 0
-		item_names.push_back("No item");
+		item_names.push_back("NOITEM");
 
 		// read the names
 		for (int i = 0x0; i < 0xF9; i++) {
