@@ -88,9 +88,12 @@ int main(int argc, char* argv[]) {
 		}
 		
 		// trainer classes
+		// Changing these does not change what is displayed
+		// May be a redundant copy
 		//romfile.seekg(0x1D9535C);
 
 		// trainer names
+		// Changing these DOES change what is displayed
 		//romfile.seekg(0x1D9570C); 
 
 		// Camper Cole's pokemon
