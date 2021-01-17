@@ -10,7 +10,7 @@ This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developi
 
 ### Command line
 
-I have not yet written Makefiles for the command line version, as it is currently just an experiment. You should be able to simply build it with g++. 
+I have not yet written Makefiles for the command line version, as it is currently just an experiment. You should be able to simply build it with g++.
 
 Make sure your ROM is in the same folder as the executable and named "ps2.z64".
 
