@@ -14,23 +14,22 @@ Currently unable to build on my laptop, something broke with the dependency pack
 I might either reinstall the OS on here and start over, or change to a newer version of wxWidgets.
 Regardless, I want to do a command-line rewrite first to get the complete logic down.
 
-1. Set up wxWidgets
-    * This link will probably be helpful: https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2
-    * > $ sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc
-    * > $ sudo apt-add-repository 'deb http://repos.codelite.org/wx3.0.4/ubuntu/ artful universe'
-    * > $ sudo apt update
-    * > $ sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc
+1. [Set up wxWidgets](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2)
+    * `sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc`
+    * `sudo apt-add-repository 'deb http://repos.codelite.org/wx3.0.4/ubuntu/ artful universe'`
+    * `sudo apt update`
+    * `sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc`
 
 2. Compile
-    * > $ make
+    * `make`
 
 3. Run
-    * > $ ./ps2rand
+    * `./ps2rand`
 
 ### Windows
 
 1. Set up wxWidgets
-    * I compiled it with Mingw-w64. The win-builds version did not work, so I used this package from SourceForge: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe
+    * I compiled it with Mingw-w64. The win-builds version did not work, so I used [this package from SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe)
 
         I installed with the default options.
 
@@ -38,26 +37,28 @@ Regardless, I want to do a command-line rewrite first to get the complete logic 
 
         This should also work with Visual Studio, but I did not try this and would have no idea how to set it up. Sorry.
 
-    * This YouTube video pointed me in the right direction as far as the compilation goes: https://www.youtube.com/watch?v=vmobZRIlBMU
-        * Download the wxWidgets code:
-        https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.zip
-        * Newer versions may work, this will need to be tested
+    * [This YouTube video](https://www.youtube.com/watch?v=vmobZRIlBMU) pointed me in the right direction as far as the compilation goes.
+        * Download the [wxWidgets code](https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.zip). Newer versions may work, this will need to be tested.
         * Extract to a convenient directory, such as C:\wxWidgets-3.0.4\
         * In command prompt, browse to the msw build directory
-            > \> cd \wxWidgets-3.0.4\build\msw
+
+            `cd \wxWidgets-3.0.4\build\msw`
         * Build wxWidgets
-            > \> mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11 
+
+            `mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11`
         * Wait a half an hour or so depending on your PC. May God have mercy on your soul.
 
 2. Compile
 
-    > \> mingw32-make -f Makefile.win
+    `mingw32-make -f Makefile.win`
 
 3. Run
     * Copy the wxWidgets DLL we built in step 2 to the current directory
-        > \> copy \wxWidgets-3.0.4\lib\gcc_dll\wxmsw30u_gcc_custom.dll .
+
+        `copy \wxWidgets-3.0.4\lib\gcc_dll\wxmsw30u_gcc_custom.dll .`
     * Finally ready to run!
-        > \> .\ps2rand.exe
+
+        `.\ps2rand.exe`
 
 ## Usage
 
@@ -79,11 +80,8 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
 
 * What's next?
 
-	* Code reorganization (um, ever heard of folders?)
-	* Dump wxWidgets and do a CLI version, reintegrate GUI after it's done
-
-	* Randomize remaining leagues and second rounds.
-	* Randomize Pokemon nicknames
-	* Refactor and clean up randomization code
-	* Read Pokemon, move, and items names from ROM instead of header files
-	* Randomize held items
+  * Read Pokemon, move, and items names from ROM instead of header files
+  * Dump wxWidgets and do a CLI version, reintegrate GUI after it's done
+  * Randomize remaining leagues and second rounds.
+  * Randomize held items
+  * Randomize Pokemon nicknames
