@@ -6,13 +6,21 @@ In the future, it will hopefully be able to randomize the Pokemon owned by all N
 
 ## Building
 
-This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developing this program. The "core" randomization code does not have any external requirements.
+This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developing this program. The randomization code itself does not have any external requirements.
+
+### Command line
+
+I have not yet written Makefiles for the command line version, as it is currently just an experiment. You should be able to simply build it with g++. 
+
+Make sure your ROM is in the same folder as the executable and named "ps2.z64".
+
+`g++ src\main-cli.cpp -o bin\ps2rand.exe`
 
 ### Linux
 
 Currently unable to build on my laptop, something broke with the dependency packages.
 I might either reinstall the OS on here and start over, or change to a newer version of wxWidgets.
-Regardless, I want to do a command-line rewrite first to get the complete logic down.
+Regardless, I want to do a command-line rewrite first to get the complete logic finished first.
 
 1. [Set up wxWidgets](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2)
     * `sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc`
@@ -62,11 +70,11 @@ Regardless, I want to do a command-line rewrite first to get the complete logic 
 
 ## Usage
 
-* Click the Browse button to select your ROM file.
-* Click the Randomize button to have the selected ROM randomized.
-* That's it. Load it up in an emulator and check it out.
+1. Click the Browse button to select your ROM file.
+1. Click the Randomize button to have the selected ROM randomized.
+1. Load it up in an emulator and check it out.
 
-I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran both the original and modified ROMs without any issues, so that's what I'd recommend using. Maybe change the resolution to at least 640x480 and don't forget to configure your controller. Remember that the D-pad is used exclusively, the analog is totally unused in both Pokemon Stadium games.
+I tested using BizHawk 1.13.2. Other emulators should work but I have not tested them, please let me know if you run into issues. The Pokemon Stadium games are [incompatible with BizHawk versions 2.3 and up](https://github.com/TASVideos/BizHawk/issues/1535).
 
 ## FAQ
 
