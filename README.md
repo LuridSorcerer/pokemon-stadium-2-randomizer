@@ -2,7 +2,7 @@
 
 This program randomizes the moves known by rental Pokemon in the Nintendo 64 game Pokemon Stadium 2 (USA).
 
-In the future, it will hopefully be able to randomize the Pokemon owned by NPC trainers, as well as the moves, held items, and stats of these Pokemon.
+In the future, it will hopefully be able to randomize the Pokemon owned by all NPC trainers, as well as the moves, held items, and stats of these Pokemon.
 
 ## Building
 
@@ -72,16 +72,18 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
 
 * Does this work on...?
 
-    Probalby not. It only works with the USA release of Pokemon Stadium 2. (SHA-1: D8343E69A7DC63B869CF6361D87CDE64444281D3). This randomizer relies on the exact locations of particular data. If you feed it another file, it will look for the ROM header and fail if it does not match what is expected.
+    This randomizer is designed for one specific ROM: the US release of Pokemon Stadium 2, in z64 format. ROMs in n64 or v64 format will not work, as their data is in a different order. Converters between the formats should help. The ROM's SHA-1 hash should be D8343E69A7DC63B869CF6361D87CDE64444281D3 before randomization.
 
 * Can I undo a randomization?
 
-    No. Please keep a backup copy of your original ROM.
+    Not at this time. Please keep a backup copy of your original ROM.
 
 * What's next?
 
   * Read Pokemon, move, and items names from ROM instead of header files
   * Dump wxWidgets and do a CLI version, reintegrate GUI after it's done
+  * Write randomized ROM to new file in order to preserve the original
   * Randomize remaining leagues and second rounds.
   * Randomize held items
   * Randomize Pokemon nicknames
+  * Converter for n64 and v64 formats
