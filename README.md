@@ -6,13 +6,13 @@ In the future, it will hopefully be able to randomize the Pokemon owned by NPC t
 
 ## Building
 
-This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developing this program. The "core" randomization code does not have any external requirements. 
+This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developing this program. The "core" randomization code does not have any external requirements.
 
 ### Linux
 
-Currently unable to build on my laptop, something broke with the dependency packages. 
+Currently unable to build on my laptop, something broke with the dependency packages.
 I might either reinstall the OS on here and start over, or change to a newer version of wxWidgets.
-Regardless, I want to do a command-line rewrite first to get the complete logic down. 
+Regardless, I want to do a command-line rewrite first to get the complete logic down.
 
 1. Set up wxWidgets
     * This link will probably be helpful: https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2
@@ -21,7 +21,7 @@ Regardless, I want to do a command-line rewrite first to get the complete logic 
     * > $ sudo apt update
     * > $ sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc
 
-2. Compile 
+2. Compile
     * > $ make
 
 3. Run
@@ -33,7 +33,7 @@ Regardless, I want to do a command-line rewrite first to get the complete logic 
     * I compiled it with Mingw-w64. The win-builds version did not work, so I used this package from SourceForge: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe
 
         I installed with the default options.
-    
+
         Don't forget to add the bin folder to your path!
 
         This should also work with Visual Studio, but I did not try this and would have no idea how to set it up. Sorry.
@@ -59,12 +59,11 @@ Regardless, I want to do a command-line rewrite first to get the complete logic 
     * Finally ready to run!
         > \> .\ps2rand.exe
 
-
 ## Usage
 
 * Click the Browse button to select your ROM file.
 * Click the Randomize button to have the selected ROM randomized.
-* That's it. Load it up in an emulator and check it out. 
+* That's it. Load it up in an emulator and check it out.
 
 I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran both the original and modified ROMs without any issues, so that's what I'd recommend using. Maybe change the resolution to at least 640x480 and don't forget to configure your controller. Remember that the D-pad is used exclusively, the analog is totally unused in both Pokemon Stadium games.
 
@@ -72,8 +71,8 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
 
 * Does this work on...?
 
-    Probalby not. It only works with the USA release of Pokemon Stadium 2. (SHA-1: D8343E69A7DC63B869CF6361D87CDE64444281D3). This randomizer relies on the exact locations of particular data. If you feed it another file, it will look for the ROM header and fail if it does not match what is expected. 
-    
+    Probalby not. It only works with the USA release of Pokemon Stadium 2. (SHA-1: D8343E69A7DC63B869CF6361D87CDE64444281D3). This randomizer relies on the exact locations of particular data. If you feed it another file, it will look for the ROM header and fail if it does not match what is expected.
+
 * Can I undo a randomization?
 
     No. Please keep a backup copy of your original ROM.
@@ -83,7 +82,7 @@ I had trouble running Pokemon Stadium 2 in BizHawk 2 releases. BizHawk 1 ran bot
 	* Code reorganization (um, ever heard of folders?)
 	* Dump wxWidgets and do a CLI version, reintegrate GUI after it's done
 
-	* Randomize remaining leagues and second rounds. 
+	* Randomize remaining leagues and second rounds.
 	* Randomize Pokemon nicknames
 	* Refactor and clean up randomization code
 	* Read Pokemon, move, and items names from ROM instead of header files
