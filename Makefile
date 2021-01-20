@@ -1,14 +1,17 @@
 CC = g++
-SOURCE = Randomizer.cpp main.cpp
-OBJ = Randomizer.o main.o
-EXE = ps2rand
+HEADERS = src/Constants.hpp src/Items.hpp src/LittleCup.hpp src/Moves.hpp src/PokeCup.hpp src/PokemonNames.hpp src/PrimeCup.hpp src/Randomizer.hpp
+EXE = bin/ps2rand
 CXXFLAGS = `wx-config --cxxflags`
 LIBS = `wx-config --libs`
 
-all: $(OBJ)
-	$(CC) -o $(EXE) $(OBJ) $(LIBS)
-%.o: %.cpp 
-	$(CC) -c $(SOURCE) $(CXXFLAGS) 
+all: obj/main.o
+	$(CC) -o $(EXE) obj/main.o obj/Randomizer.o $(LIBS)
+	
+obj/main.o: src/main.cpp obj/Randomizer.o
+	$(CC) -c $< -o $@ $(CXXFLAGS)
+	
+obj/Randomizer.o : src/Randomizer.cpp $(HEADERS)
+	$(CC) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ) $(EXE)
+	rm -rf obj/*.o $(EXE)
