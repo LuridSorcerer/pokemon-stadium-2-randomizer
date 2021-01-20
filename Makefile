@@ -4,7 +4,9 @@ EXE = bin/ps2rand
 CXXFLAGS = `wx-config --cxxflags`
 LIBS = `wx-config --libs`
 
-all: obj/main.o
+all: $(EXE)
+
+$(EXE): obj/main.o
 	$(CC) -o $(EXE) obj/main.o obj/Randomizer.o $(LIBS)
 	
 obj/main.o: src/main.cpp obj/Randomizer.o

@@ -4,7 +4,9 @@ EXE = bin\ps2rand.exe
 CXXFLAGS = -std=gnu++11 -pipe -mthreads -D__GNUWIN32__ -D__WXMSW__ -DWXUSINGDLL -DwxUSE_UNICODE -Wall -g -IC:\wxWidgets-3.0.4\include -IC:\wxWidgets-3.0.4\lib\gcc_dll\mswu
 LIBS = -LC:\wxWidgets-3.0.4\lib\gcc_dll  -mthreads  -lwxmsw30u -mwindows
 
-all: obj\main.o
+all: $(EXE)
+
+$(EXE): obj\main.o
 	$(CC) -o $(EXE) obj\main.o obj\Randomizer.o $(LIBS) $(CXXFLAGS)
 
 obj\main.o: src\main.cpp obj\Randomizer.o
