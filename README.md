@@ -18,16 +18,9 @@ Make sure your ROM is in the same folder as the executable and named "ps2.z64".
 
 ### Linux
 
-Currently unable to build on my laptop, something broke with the dependency packages.
-I might either reinstall the OS on here and start over, or change to a newer version of wxWidgets.
-Regardless, I want to do a command-line rewrite first to get the complete logic finished first.
-
-1. [Set up wxWidgets](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2)
-    * `sudo apt-key adv --fetch-keys http://repos.codelite.org/CodeLite.asc`
-    * `sudo apt-add-repository 'deb http://repos.codelite.org/wx3.0.4/ubuntu/ artful universe'`
-    * `sudo apt update`
+1. Install wxWidgets
     * `sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc`
-
+    
 2. Compile
     * `make`
 
