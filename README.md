@@ -25,7 +25,7 @@ Make sure your ROM is in the same folder as the executable and named "ps2.z64".
     * `make`
 
 3. Run
-    * `./ps2rand`
+    * `bin/ps2rand`
 
 ### Windows
 
@@ -39,11 +39,11 @@ Make sure your ROM is in the same folder as the executable and named "ps2.z64".
         This should also work with Visual Studio, but I did not try this and would have no idea how to set it up. Sorry.
 
     * [This YouTube video](https://www.youtube.com/watch?v=vmobZRIlBMU) pointed me in the right direction as far as the compilation goes.
-        * Download the [wxWidgets code](https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.zip). Newer versions may work, this will need to be tested.
-        * Extract to a convenient directory, such as C:\wxWidgets-3.0.4\
+        * Download the [wxWidgets code](https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5/wxWidgets-3.0.5.zip).
+        * Extract to a convenient directory, such as C:\wxWidgets-3.0.5\
         * In command prompt, browse to the msw build directory
 
-            `cd \wxWidgets-3.0.4\build\msw`
+            `cd \wxWidgets-3.0.5\build\msw`
         * Build wxWidgets
 
             `mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11`
@@ -56,10 +56,10 @@ Make sure your ROM is in the same folder as the executable and named "ps2.z64".
 3. Run
     * Copy the wxWidgets DLL we built in step 2 to the current directory
 
-        `copy \wxWidgets-3.0.4\lib\gcc_dll\wxmsw30u_gcc_custom.dll .`
+        `copy \wxWidgets-3.0.5\lib\gcc_dll\wxmsw30u_gcc_custom.dll .`
     * Finally ready to run!
 
-        `.\ps2rand.exe`
+        `bin\ps2rand.exe`
 
 ## Usage
 
