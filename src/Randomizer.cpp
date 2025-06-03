@@ -1,6 +1,7 @@
 #include "Randomizer.hpp"
 #include <algorithm>
 #include <iostream>
+#include <cstdint>
 
 Randomizer::Randomizer(std::string filename) {
     rom.open(filename, std::ios::in | std::ios::out | std::ios::binary);

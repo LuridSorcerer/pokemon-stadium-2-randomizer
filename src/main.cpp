@@ -7,10 +7,7 @@
 #include "Randomizer.hpp"
 
 // use precompiled headers if available
-#include <wx/wxprec.h>
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
+#include <wx/wx.h>
 #include <wx/filepicker.h>
 
 Randomizer *randomizer;

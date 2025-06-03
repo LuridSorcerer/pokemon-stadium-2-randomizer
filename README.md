@@ -6,60 +6,57 @@ In the future, it will hopefully be able to randomize the Pokemon owned by all N
 
 ## Building
 
-This program uses wxWidgets for its GUI. wxWidgets 3.0.4 was used while developing this program. The randomization code itself does not have any external requirements.
+This program uses wxWidgets for its GUI. wxWidgets 3.2.8.1 is the latest version tested for this program. The randomization code itself does not have any external requirements.
 
-### Command line
-
-I have not yet written Makefiles for the command line version, as it is currently just an experiment. You should be able to simply build it with g++.
-
-Make sure your ROM is in the same folder as the executable and named "ps2.z64".
-
-`g++ src\main-cli.cpp -o bin\ps2rand.exe`
-
-### Linux
+[//]: # "TODO: Update Linux build instructions"
+### Linux 
 
 1. Install wxWidgets
-    * `sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc`
+    * `$ sudo apt install libwxbase3.0-0-unofficial libwxbase3.0-dev libwxgtk3.0-0-unofficial libwxgtk3.0-dev wx3.0-headers wx-common libwxbase3.0-dbg libwxgtk3.0-dbg wx3.0-i18n wx3.0-examples wx3.0-doc`
     
 2. Compile
-    * `make`
+    * `$ make`
 
 3. Run
-    * `bin/ps2rand`
+    * `$ bin/ps2rand`
 
 ### Windows
 
-1. Set up wxWidgets
-    * I compiled it with Mingw-w64. The win-builds version did not work, so I used [this package from SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe)
+1. Install compiler mingw32. 
 
-        I installed with the default options.
+    * Download the release package from https://github.com/niXman/mingw-builds-binaries/releases .
 
-        Don't forget to add the bin folder to your path!
+    * Extract and place the mingw32 folder somewhere convenient, such as the root of the C: drive. 
 
-        This should also work with Visual Studio, but I did not try this and would have no idea how to set it up. Sorry.
+    * Add the bin subfolder to your path (eg. C:\mingw32\bin). 
 
-    * [This YouTube video](https://www.youtube.com/watch?v=vmobZRIlBMU) pointed me in the right direction as far as the compilation goes.
-        * Download the [wxWidgets code](https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5/wxWidgets-3.0.5.zip).
-        * Extract to a convenient directory, such as C:\wxWidgets-3.0.5\
-        * In command prompt, browse to the msw build directory
+1. Compile wxWidgets. 
 
-            `cd \wxWidgets-3.0.5\build\msw`
-        * Build wxWidgets
+    * Download from https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.zip . 
 
-            `mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11`
-        * Wait a half an hour or so depending on your PC. May God have mercy on your soul.
+    * Create a folder somewhere convenient (such as C:\wxWidgets-3.2.8.1) and extract the zip's contents there.
 
-2. Compile
+        **Note: If you place this folder elsewhere or use a different wxWidgets version, please update the Makefile.win file to reflect this. Update the CXXFLAGS and LIBS variables accordingly.**
 
-    `mingw32-make -f Makefile.win`
+    * In a comamnd line window, navigate to the build directory for Windows. 
 
-3. Run
-    * Copy the wxWidgets DLL we built in step 2 to the current directory
+        `> cd C:\wxWidgets-3.2.8.1\build\msw\`
 
-        `copy \wxWidgets-3.0.5\lib\gcc_dll\wxmsw30u_gcc_custom.dll .`
-    * Finally ready to run!
+    * Begin the build.
 
-        `bin\ps2rand.exe`
+        `> mingw32-make -f makefile.gcc BUILD=release SHARED=1 MONOLITHIC=1 UNICODE=1 CXXFLAGS=-std=gnu++11`
+
+    * When complete, copy wxWidgets-3.2.8.1\lib\gcc_dll\wxmsw32u_gcc_custom.dll to this project's bin folder. 
+
+1. Compile the randomizer. Navigate to this project's folder in the command line interface, then run the make command.
+
+    `> mingw32-make -f Makefile.win`
+
+1. Run the resulting executable file 
+    
+    `> cd bin`
+
+    `> ps2rand.exe`
 
 ## Usage
 

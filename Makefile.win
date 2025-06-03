@@ -1,8 +1,8 @@
 CC = g++
 HEADERS = src\Constants.hpp src\Items.hpp src\LittleCup.hpp src\Moves.hpp src\PokeCup.hpp src\PokemonNames.hpp src\PrimeCup.hpp src\Randomizer.hpp
 EXE = bin\ps2rand.exe
-CXXFLAGS = -std=gnu++11 -pipe -mthreads -D__GNUWIN32__ -D__WXMSW__ -DWXUSINGDLL -DwxUSE_UNICODE -Wall -g -IC:\wxWidgets-3.0.5\include -IC:\wxWidgets-3.0.5\lib\gcc_dll\mswu
-LIBS = -LC:\wxWidgets-3.0.5\lib\gcc_dll  -mthreads  -lwxmsw30u -mwindows
+CXXFLAGS = -std=gnu++11 -pipe -mthreads -D__GNUWIN32__ -D__WXMSW__ -DWXUSINGDLL -DwxUSE_UNICODE -Wall -g -IC:\wxWidgets-3.2.8.1\include -IC:\wxWidgets-3.2.8.1\lib\gcc_dll\mswu
+LIBS = -LC:\wxWidgets-3.2.8.1\lib\gcc_dll  -mthreads  -lwxmsw32u -mwindows
 
 all: $(EXE)
 
